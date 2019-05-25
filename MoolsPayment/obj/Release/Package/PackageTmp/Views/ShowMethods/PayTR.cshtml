@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "PayTR";
+    Layout = null;
+}
+
+<form action="@ViewBag.post_link" method="POST">
+    <input type="text" name="merchant_id" value="@ViewBag.merchant_id"/>
+    <input type="text" name="user_ip" value="@ViewBag.user_ip"/>
+    <input type="text" name="merchant_oid" value="@ViewBag.merchant_oid"/>
+    <input type="text" name="email" value="@ViewBag.email"/>
+    <input type="text" name="payment_amount" value="@ViewBag.payment_amount"/>
+    <input type="text" name="no_installment" value="@ViewBag.no_installment"/>
+    <input type="text" name="max_installment" value="@ViewBag.max_installment"/>
+    <input type="text" name="user_name" value="@ViewBag.user_name"/>
+    <input type="text" name="merchant_ok_url" value="@ViewBag.merchant_ok_url"/>
+    <input type="text" name="merchant_fail_url" value="@ViewBag.merchant_fail_url"/>
+    <input type="text" name="paytr_token" value="@ViewBag.paytr_token"/>
+    <input type="text" name="user_basket" value="@ViewBag.user_basket"/>
+    <input type="text" name="user_address" value="@ViewBag.user_address"/>
+    <input type="text" name="user_phone" value="@ViewBag.user_phone"/>
+    <input type="text" name="debug_on" value="@ViewBag.debug_on"/>
+    <input type="submit" value="Gönder"/>
+</form>
+

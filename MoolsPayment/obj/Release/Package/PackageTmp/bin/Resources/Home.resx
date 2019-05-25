@@ -1,0 +1,1525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>Hesap</value>
+  </data>
+  <data name="BuyPremium" xml:space="preserve">
+    <value>Premium Satın Al</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Eposta</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>İngilizce (EN)</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Sona Erme Tarihi</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP Adresi</value>
+  </data>
+  <data name="MoneyBalance" xml:space="preserve">
+    <value>Para Bakiyesi</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>Hesabım</value>
+  </data>
+  <data name="MyAccountInformation" xml:space="preserve">
+    <value>Hesap Bilgilerim</value>
+  </data>
+  <data name="NotHavePremium" xml:space="preserve">
+    <value>Yüklü Değil</value>
+  </data>
+  <data name="NPoints" xml:space="preserve">
+    <value>NPoint</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="PendingPayments" xml:space="preserve">
+    <value>Bekleyen Ödemeler</value>
+  </data>
+  <data name="SiteDomain" xml:space="preserve">
+    <value>MoolsLife.com</value>
+  </data>
+  <data name="SiteName" xml:space="preserve">
+    <value>MoolsPayment</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Toplam</value>
+  </data>
+  <data name="Turkish" xml:space="preserve">
+    <value>Türkçe (TR)</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Kullanıcı Adı</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Hoşgeldiniz</value>
+  </data>
+  <data name="ChangeEmail" xml:space="preserve">
+    <value>Eposta Değiştir</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Şifre Değiştir</value>
+  </data>
+  <data name="ClassChange" xml:space="preserve">
+    <value>Sınıf Değiştirme</value>
+  </data>
+  <data name="GenderChange" xml:space="preserve">
+    <value>Cinsiyet Değiştirme</value>
+  </data>
+  <data name="InGameFeatures" xml:space="preserve">
+    <value>Oyuniçi Özellikler</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Çıkış Yap</value>
+  </data>
+  <data name="MENU_BUY_NPOINTS" xml:space="preserve">
+    <value>NPOINT (KC) SATIN AL</value>
+  </data>
+  <data name="MENU_CLAN_RANKINGS" xml:space="preserve">
+    <value>KLAN SIRALAMASI</value>
+  </data>
+  <data name="MENU_DOWNLOAD" xml:space="preserve">
+    <value>Indir</value>
+  </data>
+  <data name="MENU_GUIDE" xml:space="preserve">
+    <value>Rehber</value>
+  </data>
+  <data name="MENU_HOMEPAGE" xml:space="preserve">
+    <value>Anasayfa</value>
+  </data>
+  <data name="MENU_LOGIN" xml:space="preserve">
+    <value>GİRİŞ YAP</value>
+  </data>
+  <data name="MENU_MONTLY_RANKINGS" xml:space="preserve">
+    <value>AYLIK SIRALAMA</value>
+  </data>
+  <data name="MENU_MYACCOUNT" xml:space="preserve">
+    <value>HESABIM</value>
+  </data>
+  <data name="MENU_OUR_DEALERS" xml:space="preserve">
+    <value>Satış Bayilerimiz</value>
+  </data>
+  <data name="MENU_PRODUCTS_PRICES" xml:space="preserve">
+    <value>Pus Ürünleri ve Fiyatları</value>
+  </data>
+  <data name="MENU_PUS_GUIDE" xml:space="preserve">
+    <value>Pus Rehberi</value>
+  </data>
+  <data name="MENU_RANKINGS" xml:space="preserve">
+    <value>SIRALAMALAR</value>
+  </data>
+  <data name="MENU_REGISTER" xml:space="preserve">
+    <value>Kayit Ol</value>
+  </data>
+  <data name="MENU_SUPPORT" xml:space="preserve">
+    <value>Destek</value>
+  </data>
+  <data name="MENU_EXPLORE" xml:space="preserve">
+    <value>KeŞfet</value>
+  </data>
+  <data name="MENU_USER_RANKINGS" xml:space="preserve">
+    <value>KULLANICI SIRALAMASI</value>
+  </data>
+  <data name="MoneyBalancetoKC" xml:space="preserve">
+    <value>Para Bakiyemi KC'ye Çevir</value>
+  </data>
+  <data name="NationTransfer" xml:space="preserve">
+    <value>Irk Transferi</value>
+  </data>
+  <data name="PaymentHistory" xml:space="preserve">
+    <value>Ödeme Geçmişi</value>
+  </data>
+  <data name="PurchaseHistory" xml:space="preserve">
+    <value>Alışveriş Geçmişi</value>
+  </data>
+  <data name="RechargeNpoints" xml:space="preserve">
+    <value>NPoint (KC) Yükle</value>
+  </data>
+  <data name="ActivatingAccount" xml:space="preserve">
+    <value>Hesap Aktifleştirme</value>
+  </data>
+  <data name="ActivatingAccountUpper" xml:space="preserve">
+    <value>HESAP AKTİFLEŞTİRME</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Fiyat</value>
+  </data>
+  <data name="ChangeNewEmail" xml:space="preserve">
+    <value>Mailimi Değiştir</value>
+  </data>
+  <data name="Character" xml:space="preserve">
+    <value>Karakter</value>
+  </data>
+  <data name="ClanName" xml:space="preserve">
+    <value>Klan Adı</value>
+  </data>
+  <data name="ExtraDownloads" xml:space="preserve">
+    <value>Ekstra İndirmeler</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Şifremi Unuttum</value>
+  </data>
+  <data name="ForgotPasswordUpper" xml:space="preserve">
+    <value>ŞİFREMİ UNUTTUM</value>
+  </data>
+  <data name="GamerName" xml:space="preserve">
+    <value>Oyuncu Adı</value>
+  </data>
+  <data name="ItemName" xml:space="preserve">
+    <value>Eşya Adı</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="LoginUpper" xml:space="preserve">
+    <value>GİRİŞ YAP</value>
+  </data>
+  <data name="NoPurchaseHistory" xml:space="preserve">
+    <value>Alışveriş geçmişinde kayıt bulunamadı.</value>
+  </data>
+  <data name="NotActivatedUserRanks" xml:space="preserve">
+    <value>Kullanıcı sıralaması henüz aktif değildir.</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Puan</value>
+  </data>
+  <data name="PurchaseDate" xml:space="preserve">
+    <value>Satınalma Tarihi</value>
+  </data>
+  <data name="PurchaseHistoryUpper" xml:space="preserve">
+    <value>ALIŞVERİŞ GEÇMİŞİ</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Adet</value>
+  </data>
+  <data name="Rank" xml:space="preserve">
+    <value>Sıralama</value>
+  </data>
+  <data name="RankingUser" xml:space="preserve">
+    <value>Kullanıcı Sıralaması</value>
+  </data>
+  <data name="RankingClan" xml:space="preserve">
+    <value>Klan Sıralaması</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Kayit Ol</value>
+  </data>
+  <data name="ResendActivateEmail" xml:space="preserve">
+    <value>Aktivasyon Mailini Tekrar Gönder</value>
+  </data>
+  <data name="ResendActivateEmailUpper" xml:space="preserve">
+    <value>AKTİVASYON MAİLİNİ TEKRAR GÖNDER</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Şifre Yenileme</value>
+  </data>
+  <data name="ResetPasswordUpper" xml:space="preserve">
+    <value>ŞİFRE YENİLEME</value>
+  </data>
+  <data name="SecretQuestion1" xml:space="preserve">
+    <value>What is your favorite super hero</value>
+  </data>
+  <data name="SecretQuestion2" xml:space="preserve">
+    <value>Who is your favorite cartoon character</value>
+  </data>
+  <data name="SecretQuestion3" xml:space="preserve">
+    <value>What was the name of your first teacher</value>
+  </data>
+  <data name="SecretQuestion4" xml:space="preserve">
+    <value>What is your mothers maiden name</value>
+  </data>
+  <data name="SecretQuestion5" xml:space="preserve">
+    <value>What is the name of your first pet</value>
+  </data>
+  <data name="SendConfirmationEmail" xml:space="preserve">
+    <value>Onaylama Epostası Gönder</value>
+  </data>
+  <data name="SiteNameUpper" xml:space="preserve">
+    <value>MoolsPayment</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Boyut</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versiyon</value>
+  </data>
+  <data name="AcceptChangeEmail" xml:space="preserve">
+    <value>Eposta Değiştirmeyi Onaylıyorum</value>
+  </data>
+  <data name="AcceptResetPassword" xml:space="preserve">
+    <value>Şifre Yenilemeyi Onaylıyorum</value>
+  </data>
+  <data name="AcceptValidateAccount" xml:space="preserve">
+    <value>Hesabımı Aktifleştir</value>
+  </data>
+  <data name="CantFindAccount" xml:space="preserve">
+    <value>Bu böyle bir hesap bulunamadı</value>
+  </data>
+  <data name="ConfirmCurrentEmailAddress" xml:space="preserve">
+    <value>Tekrar Şuanki Epostanız</value>
+  </data>
+  <data name="ConfirmCurrentPassword" xml:space="preserve">
+    <value>Tekrar Şuanki Şifreniz</value>
+  </data>
+  <data name="ConfirmNewEmailAddress" xml:space="preserve">
+    <value>Tekrar Yeni Epostanız</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Tekrar Yeni Şifreniz</value>
+  </data>
+  <data name="CurrentEmailAddress" xml:space="preserve">
+    <value>Şuanki Epostanız</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Şuanki Şifreniz</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email Adresi</value>
+  </data>
+  <data name="EmailChangeConfirmation" xml:space="preserve">
+    <value>Eposta Değişikliği Onaylama</value>
+  </data>
+  <data name="FailCurrentPassword" xml:space="preserve">
+    <value>Current Password must be a alphanumeric. a-z, A-Z, 0-9</value>
+  </data>
+  <data name="FailNewPassword" xml:space="preserve">
+    <value>New Password must be a alphanumeric. a-z, A-Z, 0-9</value>
+  </data>
+  <data name="FailPassword" xml:space="preserve">
+    <value>Password must be a alphanumeric. a-z, A-Z, 0-9</value>
+  </data>
+  <data name="FailSealPin" xml:space="preserve">
+    <value>Seal Pin must be a integer. 0-9 to 0-9</value>
+  </data>
+  <data name="FailSecretAnswer" xml:space="preserve">
+    <value>Secret Answer must be a-z, A-Z</value>
+  </data>
+  <data name="FailSecretQuestion" xml:space="preserve">
+    <value>Secret Question must be a-z, A-Z and space char</value>
+  </data>
+  <data name="FailUsername" xml:space="preserve">
+    <value>Username must be a alphanumeric. a-z, A-Z, 0-9</value>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>Anasayfa</value>
+  </data>
+  <data name="NewAccountInformation" xml:space="preserve">
+    <value>Tebrikler! Yeni hesap bilgileriniz ile MoolsPayment'e giriş yapabilirsiniz.</value>
+  </data>
+  <data name="NewChangedAccountInformation" xml:space="preserve">
+    <value>Bilgileriniz değiştirildi, yeni hesap bilgileriniz aşağıdaki gibidir</value>
+  </data>
+  <data name="NewEmailAddress" xml:space="preserve">
+    <value>Yeni Epostanız</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Yeni Şifreniz</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Haberler</value>
+  </data>
+  <data name="NewsUpper" xml:space="preserve">
+    <value>HABERLER</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Telefon Numarasi</value>
+  </data>
+  <data name="RegistrationCompleted" xml:space="preserve">
+    <value>Kayıt Tamamlandı</value>
+  </data>
+  <data name="SealPin" xml:space="preserve">
+    <value>Eşya Kilit Şifresi</value>
+  </data>
+  <data name="SecretAnswer" xml:space="preserve">
+    <value>Güvenli Cevap</value>
+  </data>
+  <data name="SecretQuestion" xml:space="preserve">
+    <value>Güvenli Soru</value>
+  </data>
+  <data name="SiteEmail" xml:space="preserve">
+    <value>info@moolslife.com</value>
+  </data>
+  <data name="SiteFacebookAddress" xml:space="preserve">
+    <value>https://www.facebook.com/MoolsPaymentOfficial</value>
+  </data>
+  <data name="SiteGooglePlusAddress" xml:space="preserve">
+    <value>https://plus.google.com/116967339309951651315</value>
+  </data>
+  <data name="SiteTwitterAddress" xml:space="preserve">
+    <value>https://www.twitter.com/MoolsPaymentOfficial</value>
+  </data>
+  <data name="SiteYoutubeAddress" xml:space="preserve">
+    <value>https://www.youtube.com/channel/UCDsBOhPVeUa7oxlDDjwGEzw</value>
+  </data>
+  <data name="YourEmailChanged" xml:space="preserve">
+    <value>Epostanız Değiştirildi</value>
+  </data>
+  <data name="YourPasswordChanged" xml:space="preserve">
+    <value>Şifreniz Değiştirildi</value>
+  </data>
+  <data name="FailDoNotMatchEmail" xml:space="preserve">
+    <value>The new email and confirmation email do not match.</value>
+  </data>
+  <data name="FailDoNotMatchPassword" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="FailLenghtPassword" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="FailLenghtPhoneNumber" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long. Example: 905553332535</value>
+  </data>
+  <data name="FailLenghtSealPin" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="FailLenghtSecretAnswer" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="FailLenghtSecretQuestion" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="FailLenghtUsername" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="NationTransferUpper" xml:space="preserve">
+    <value>IRK TRANSFERİ</value>
+  </data>
+  <data name="AcceptNationTransfer" xml:space="preserve">
+    <value>Irk Transferini Onaylıyorum</value>
+  </data>
+  <data name="LastFreeGenderChange" xml:space="preserve">
+    <value>Son Bedava Cinsiyet Değişimi</value>
+  </data>
+  <data name="LastFreeNationTransfer" xml:space="preserve">
+    <value>Son Bedava Irk Transferi</value>
+  </data>
+  <data name="MyCharacters" xml:space="preserve">
+    <value>Karakterlerim</value>
+  </data>
+  <data name="CurrentNation" xml:space="preserve">
+    <value>Şuanki Irkınız</value>
+  </data>
+  <data name="FailGender" xml:space="preserve">
+    <value>Gender must be a-z, A-Z</value>
+  </data>
+  <data name="FailLenghtGender" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="GenderChangeUpper" xml:space="preserve">
+    <value>CİNSİYET DEĞİŞTİRME</value>
+  </data>
+  <data name="SelectList" xml:space="preserve">
+    <value>Lütfen Seçin</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Cinsiyet</value>
+  </data>
+  <data name="FailCharacter" xml:space="preserve">
+    <value>Character must be a-z, A-Z</value>
+  </data>
+  <data name="FailLenghtCharacter" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="NewChangedPasswordInformation" xml:space="preserve">
+    <value>Şifreniz değiştirildi, eğer bu işlemi siz yapmadıysanız lütfen desteğe başvurun!</value>
+  </data>
+  <data name="SiteDescription" xml:space="preserve">
+    <value>MoolsLife Payment System</value>
+  </data>
+  <data name="Announcements" xml:space="preserve">
+    <value>Duyurular</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Etkinlikler</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Devamını Oku</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Zaman</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Bizi Takip Edin</value>
+  </data>
+  <data name="LikeUs" xml:space="preserve">
+    <value>Bizi Begenin</value>
+  </data>
+  <data name="WatchUs" xml:space="preserve">
+    <value>Bizi Izleyin</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Sayfa</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="PageNotFound" xml:space="preserve">
+    <value>Sayfa Bulunamadi</value>
+  </data>
+  <data name="NewsDetail" xml:space="preserve">
+    <value>Haber Detayı</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Ürün</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Konu</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Etiket</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Etiketler</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tümü</value>
+  </data>
+  <data name="EventPrizes" xml:space="preserve">
+    <value>Etkinlik Ödülleri</value>
+  </data>
+  <data name="GoldPlusCafePrizes" xml:space="preserve">
+    <value>Gold Plus Cafe Ödülleri</value>
+  </data>
+  <data name="GoldPlusCafes" xml:space="preserve">
+    <value>Gold Plus Cafeler</value>
+  </data>
+  <data name="SortPrizes" xml:space="preserve">
+    <value>Sıralama Ödülleri</value>
+  </data>
+  <data name="StoreCampaigns" xml:space="preserve">
+    <value>Market Kampanyalari</value>
+  </data>
+  <data name="UpdateNotes" xml:space="preserve">
+    <value>Güncelleme Notlari</value>
+  </data>
+  <data name="Bonus" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
+  <data name="Campaign" xml:space="preserve">
+    <value>Kampanya</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Indirim</value>
+  </data>
+  <data name="ForNotice" xml:space="preserve">
+    <value>Bildirimi</value>
+  </data>
+  <data name="Game" xml:space="preserve">
+    <value>Oyun</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Ödeme</value>
+  </data>
+  <data name="PrivateMessage" xml:space="preserve">
+    <value>Özel Mesaj</value>
+  </data>
+  <data name="Prize" xml:space="preserve">
+    <value>Ödül</value>
+  </data>
+  <data name="Ticket" xml:space="preserve">
+    <value>Ticket</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Güncelleme</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Uyari</value>
+  </data>
+  <data name="Notices" xml:space="preserve">
+    <value>Bildirimler</value>
+  </data>
+  <data name="MyNotices" xml:space="preserve">
+    <value>Bildirimlerim</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Açiklama</value>
+  </data>
+  <data name="NoticeStartingDate" xml:space="preserve">
+    <value>Bildirim Tarihi</value>
+  </data>
+  <data name="StartingDate" xml:space="preserve">
+    <value>Başlangiç Tarihi</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Destek</value>
+  </data>
+  <data name="CharDetail" xml:space="preserve">
+    <value>Karakter Detayı</value>
+  </data>
+  <data name="SendNewTicket" xml:space="preserve">
+    <value>Yeni Ticket Gönder</value>
+  </data>
+  <data name="SupportSystem" xml:space="preserve">
+    <value>Destek Sistemi (Ticket)</value>
+  </data>
+  <data name="TicketDetail" xml:space="preserve">
+    <value>Ticket Detayı</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="YourMessage" xml:space="preserve">
+    <value>Mesajınız</value>
+  </data>
+  <data name="WriteNewAnswer" xml:space="preserve">
+    <value>Yeni Cevap Yaz</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Yetkili</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Kullanıcı</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>Oyna</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detay</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>Kullanıcı Bulunamadı</value>
+  </data>
+  <data name="Alive" xml:space="preserve">
+    <value>Hayatta</value>
+  </data>
+  <data name="Dead" xml:space="preserve">
+    <value>Ölü</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="Clan" xml:space="preserve">
+    <value>Klan Adı</value>
+  </data>
+  <data name="ClanNotFound" xml:space="preserve">
+    <value>Klan Bulunamadi</value>
+  </data>
+  <data name="PaymentMethods" xml:space="preserve">
+    <value>Ödeme Yöntemleri</value>
+  </data>
+  <data name="SalesPartners" xml:space="preserve">
+    <value>Satış Ortaklarımız</value>
+  </data>
+  <data name="PromotionalProducts" xml:space="preserve">
+    <value>Tanitim Ürünleri</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Ürünler</value>
+  </data>
+  <data name="Ranking" xml:space="preserve">
+    <value>Siralama</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Paylas</value>
+  </data>
+  <data name="CreatedDate" xml:space="preserve">
+    <value>Olusturma Tarihi</value>
+  </data>
+  <data name="LastUpdatedDate" xml:space="preserve">
+    <value>Son Cevap Tarihi</value>
+  </data>
+  <data name="Starter" xml:space="preserve">
+    <value>Baslatan</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="AdminAnswer" xml:space="preserve">
+    <value>Yönetici Cevabı</value>
+  </data>
+  <data name="Archived" xml:space="preserve">
+    <value>Arşivlenmiş</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Kapanmış</value>
+  </data>
+  <data name="ListStatus" xml:space="preserve">
+    <value>Şu Durumdakiler</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="UserAnswer" xml:space="preserve">
+    <value>Kullanıcı Cevabı</value>
+  </data>
+  <data name="TicketClose" xml:space="preserve">
+    <value>Ticket'i Kapat</value>
+  </data>
+  <data name="TicketOpen" xml:space="preserve">
+    <value>Ticket'i Tekrar Aç</value>
+  </data>
+  <data name="TicketArchive" xml:space="preserve">
+    <value>Ticket'i Arsivle</value>
+  </data>
+  <data name="MyNoticesText" xml:space="preserve">
+    <value>Hesabiniza gelen tüm geçmiş bildirimlerinizi görebilirsiniz</value>
+  </data>
+  <data name="ChangeCharAppearance" xml:space="preserve">
+    <value>Karakter Görünümü Degistir</value>
+  </data>
+  <data name="ChangeCharAppearanceDetail" xml:space="preserve">
+    <value>Lütfen görünümünü değiştirmek istediğiniz karakterin üzerine tıklayın.</value>
+  </data>
+  <data name="CharName" xml:space="preserve">
+    <value>Karakter Adi</value>
+  </data>
+  <data name="Health" xml:space="preserve">
+    <value>Can</value>
+  </data>
+  <data name="InClan" xml:space="preserve">
+    <value>Bulundugu Klan</value>
+  </data>
+  <data name="LifeSituation" xml:space="preserve">
+    <value>Yasam Durumu</value>
+  </data>
+  <data name="Experience" xml:space="preserve">
+    <value>Deneyim</value>
+  </data>
+  <data name="SurvivalTime" xml:space="preserve">
+    <value>Hayatta Kalma Süresi</value>
+  </data>
+  <data name="TotalKilledRival" xml:space="preserve">
+    <value>Toplam Öldürülen Rakip</value>
+  </data>
+  <data name="TotalKilledZombie" xml:space="preserve">
+    <value>Toplam Öldürülen Zombi</value>
+  </data>
+  <data name="Reputation" xml:space="preserve">
+    <value>Nam</value>
+  </data>
+  <data name="FoodAmount" xml:space="preserve">
+    <value>Yemek Miktari</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>saat</value>
+  </data>
+  <data name="LastMap" xml:space="preserve">
+    <value>Bulundugu Son Harita</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>dakika</value>
+  </data>
+  <data name="ToxicAmount" xml:space="preserve">
+    <value>Kandaki Zehir miktari</value>
+  </data>
+  <data name="WaterAmount" xml:space="preserve">
+    <value>Su miktari</value>
+  </data>
+  <data name="AppearanceDetailText" xml:space="preserve">
+    <value>Lütfen karakterinize uygulamak istediginiz yeni görünümünü seçiniz. Kilitli görünümleri ZK ile satın alarak, kilidi açabilirsiniz.</value>
+  </data>
+  <data name="UpdateAccountInformation" xml:space="preserve">
+    <value>Hesap Bilgilerini Güncelle</value>
+  </data>
+  <data name="UpdateMyAccountInformation" xml:space="preserve">
+    <value>Hesap Bilgilerimi Güncelle</value>
+  </data>
+  <data name="MyAccountInformationText" xml:space="preserve">
+    <value>Güvenliğiniz için lütfen en güncel ve doğru bilgilerinizi kullanınız.</value>
+  </data>
+  <data name="UpdateIt" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="NotEntered" xml:space="preserve">
+    <value>Girilmemiş</value>
+  </data>
+  <data name="SecretQuestionAndAnswer" xml:space="preserve">
+    <value>Güvenli Soru ve Cevap</value>
+  </data>
+  <data name="ChangeEmailMenu" xml:space="preserve">
+    <value>Email Adresi Degistir</value>
+  </data>
+  <data name="SecretAnswerMenu" xml:space="preserve">
+    <value>Guvenli Cevap</value>
+  </data>
+  <data name="SendConfirmationMail" xml:space="preserve">
+    <value>Onay Maili Gönder</value>
+  </data>
+  <data name="ChangePasswordMenu" xml:space="preserve">
+    <value>Şifre Degistir</value>
+  </data>
+  <data name="CurrentView" xml:space="preserve">
+    <value>Mevcut Görünüm</value>
+  </data>
+  <data name="MustBeFillSecretQuestionAndAnswer" xml:space="preserve">
+    <value>Bu işlemi gerçekleştirebilmek için ilk önce Güvenli Soru ve Cevabınızı belirlemelisiniz.</value>
+  </data>
+  <data name="ChangeSecrets" xml:space="preserve">
+    <value>Güvenli Soru ve Cevabi Degistir</value>
+  </data>
+  <data name="ChangeAppearanceStillInGame" xml:space="preserve">
+    <value>Hala oyundasınız, karakter görünümünüzü değiştirmek için oyundan çıkıp, 2 dakika beklemelisiniz.</value>
+  </data>
+  <data name="ChangeSecretsMenu" xml:space="preserve">
+    <value>Güvenli Soru ve Cevap</value>
+  </data>
+  <data name="Determine" xml:space="preserve">
+    <value>Tanimla</value>
+  </data>
+  <data name="ChangePhoneNumber" xml:space="preserve">
+    <value>Telefon Numarasi Degistir</value>
+  </data>
+  <data name="ChangePhoneNumberMenu" xml:space="preserve">
+    <value>Telefon Numarasi</value>
+  </data>
+  <data name="Activation" xml:space="preserve">
+    <value>Aktivasyon</value>
+  </data>
+  <data name="SiteInstagramAddress" xml:space="preserve">
+    <value>https://www.instagram.com/MoolsPaymentOfficial</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Çıkış Yap</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategoriler</value>
+  </data>
+  <data name="CategoryList" xml:space="preserve">
+    <value>Kategori Listesi</value>
+  </data>
+  <data name="NewCategory" xml:space="preserve">
+    <value>Yeni Kategori</value>
+  </data>
+  <data name="NewProduct" xml:space="preserve">
+    <value>Yeni Ürün</value>
+  </data>
+  <data name="NewSlider" xml:space="preserve">
+    <value>Haber Listesi</value>
+  </data>
+  <data name="Producs" xml:space="preserve">
+    <value>Ürünler</value>
+  </data>
+  <data name="ProductList" xml:space="preserve">
+    <value>Ürün Listesi</value>
+  </data>
+  <data name="SliderList" xml:space="preserve">
+    <value>Slider Listesi</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="AddNewSlider" xml:space="preserve">
+    <value>Yeni Slider Ekle</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Başlık</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="ImageUrl" xml:space="preserve">
+    <value>Resim Linki</value>
+  </data>
+  <data name="ShortDescription" xml:space="preserve">
+    <value>Kısa Açıklama</value>
+  </data>
+  <data name="SortOrder" xml:space="preserve">
+    <value>Sıralama</value>
+  </data>
+  <data name="TargetUrl" xml:space="preserve">
+    <value>Hedef Link</value>
+  </data>
+  <data name="Process" xml:space="preserve">
+    <value>İşlem</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>İptal Et</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="SiteAuthor" xml:space="preserve">
+    <value>Gamerel</value>
+  </data>
+  <data name="EnterSliderTitle" xml:space="preserve">
+    <value>Slider başlığı giriniz</value>
+  </data>
+  <data name="EnterShortDescription" xml:space="preserve">
+    <value>Kısa açıklama giriniz</value>
+  </data>
+  <data name="FailLenght" xml:space="preserve">
+    <value>{0} bölümü, en az {2} karakter olmalıdır</value>
+  </data>
+  <data name="Lang" xml:space="preserve">
+    <value>Dil (tr ya da en)</value>
+  </data>
+  <data name="EnterImageUrl" xml:space="preserve">
+    <value>Resim linkini giriniz</value>
+  </data>
+  <data name="EnterTargetUrl" xml:space="preserve">
+    <value>Hedef linkini giriniz</value>
+  </data>
+  <data name="EnterSortNumber" xml:space="preserve">
+    <value>Sıra numarası giriniz</value>
+  </data>
+  <data name="EnterLang" xml:space="preserve">
+    <value>Dil seçiniz (tr ya da en)</value>
+  </data>
+  <data name="AddNews" xml:space="preserve">
+    <value>Yeni Haber Ekle</value>
+  </data>
+  <data name="NewsList" xml:space="preserve">
+    <value>Haber Listesi</value>
+  </data>
+  <data name="IsLauncherNews" xml:space="preserve">
+    <value>Launcher</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>Görünecek linki giriniz</value>
+  </data>
+  <data name="EnterMetaDescription" xml:space="preserve">
+    <value>SEO açıklamasını giriniz</value>
+  </data>
+  <data name="EnterMetaKeywords" xml:space="preserve">
+    <value>SEO keywordleri giriniz. iki kelime arası sadece , koyunuz</value>
+  </data>
+  <data name="EnterContent" xml:space="preserve">
+    <value>İçerik giriniz</value>
+  </data>
+  <data name="EnterNewsTitle" xml:space="preserve">
+    <value>Haber başlığı giriniz</value>
+  </data>
+  <data name="MetaUrl" xml:space="preserve">
+    <value>Meta Url</value>
+  </data>
+  <data name="ReadCount" xml:space="preserve">
+    <value>Okunma Sayısı</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Üyeler</value>
+  </data>
+  <data name="MemberList" xml:space="preserve">
+    <value>Üye Listesi</value>
+  </data>
+  <data name="TodaysMember" xml:space="preserve">
+    <value>Bugün Üye Olanlar</value>
+  </data>
+  <data name="AllMembers" xml:space="preserve">
+    <value>Tüm Üyeler</value>
+  </data>
+  <data name="PaymentList" xml:space="preserve">
+    <value>Ödeme Listesi</value>
+  </data>
+  <data name="TotalTicket" xml:space="preserve">
+    <value>Toplam Ticket</value>
+  </data>
+  <data name="TicketList" xml:space="preserve">
+    <value>Ticket Listesi</value>
+  </data>
+  <data name="NewPayments" xml:space="preserve">
+    <value>Yeni Ödeme</value>
+  </data>
+  <data name="ReportsAndStatistics" xml:space="preserve">
+    <value>Raporlar ve İstatistikler</value>
+  </data>
+  <data name="Banned" xml:space="preserve">
+    <value>Banlı</value>
+  </data>
+  <data name="Deactive" xml:space="preserve">
+    <value>Aktif Değil</value>
+  </data>
+  <data name="NotActivated" xml:space="preserve">
+    <value>Onaysız</value>
+  </data>
+  <data name="BannedHWID" xml:space="preserve">
+    <value>HWID Banlı</value>
+  </data>
+  <data name="BannedTemp" xml:space="preserve">
+    <value>Geçici Banlı</value>
+  </data>
+  <data name="DateRegistered" xml:space="preserve">
+    <value>Kayıt Tarihi</value>
+  </data>
+  <data name="IsDeveloper" xml:space="preserve">
+    <value>GM</value>
+  </data>
+  <data name="LastLoginDate" xml:space="preserve">
+    <value>Son Giriş Tarihi</value>
+  </data>
+  <data name="LastLoginIP" xml:space="preserve">
+    <value>Son Giriş IP</value>
+  </data>
+  <data name="GoldPlusPlayer" xml:space="preserve">
+    <value>Gold Plus Oyuncu</value>
+  </data>
+  <data name="GoldPlus" xml:space="preserve">
+    <value>Gold Plus</value>
+  </data>
+  <data name="KillCount" xml:space="preserve">
+    <value>Öldürme Sayisi</value>
+  </data>
+  <data name="ClanRanking" xml:space="preserve">
+    <value>Klan Sıralaması</value>
+  </data>
+  <data name="ClanTag" xml:space="preserve">
+    <value>Kisaltma</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Kurucu</value>
+  </data>
+  <data name="TotalPoint" xml:space="preserve">
+    <value>Toplam Puan</value>
+  </data>
+  <data name="MemberCount" xml:space="preserve">
+    <value>Kişi Sayısı</value>
+  </data>
+  <data name="ClanLore" xml:space="preserve">
+    <value>Bilgi Yazisi</value>
+  </data>
+  <data name="UserRanking" xml:space="preserve">
+    <value>K. Siralamasi</value>
+  </data>
+  <data name="TotalCharacterCount" xml:space="preserve">
+    <value>TOPLAM KARAKTER</value>
+  </data>
+  <data name="TotalRegisteredAccountCount" xml:space="preserve">
+    <value>TOPLAM KAYITLI HESAP</value>
+  </data>
+  <data name="Guide" xml:space="preserve">
+    <value>Kilavuz</value>
+  </data>
+  <data name="InformationAlreadyActivated" xml:space="preserve">
+    <value>Hesabınız zaten aktif durumda</value>
+  </data>
+  <data name="InformationEmailNotFound" xml:space="preserve">
+    <value>Bu Eposta'ya kayıtlı bir hesap bulunamadı</value>
+  </data>
+  <data name="InformationTryAgain" xml:space="preserve">
+    <value>Lütfen işleminizi tekrar gerçekleştiriniz</value>
+  </data>
+  <data name="InformationEmailNotFoundorMultiple" xml:space="preserve">
+    <value>Bu Eposta'ya kayıtlı bir hesap bulunamadı (2)</value>
+  </data>
+  <data name="InformationBlockedActivation" xml:space="preserve">
+    <value>Çok sayıda aktivasyon maili istediğiniz için bu özellik kapatıldı. Ticket atarak bize ulaşabilirsiniz.</value>
+  </data>
+  <data name="InformationForgotpasswordMailSent" xml:space="preserve">
+    <value>Şifre sıfırlama mailiniz başarıyla gönderildi</value>
+  </data>
+  <data name="InformationInvalidOrUsedHashCode" xml:space="preserve">
+    <value>Geçersiz veya kullanılmış hash. Bu konu ile ilgili bize ticket gönderebilir, yardım alabilirsiniz.</value>
+  </data>
+  <data name="InformationActivationMailSent" xml:space="preserve">
+    <value>Aktivasyon mailiniz başarıyla gönderildi</value>
+  </data>
+  <data name="InformationEmailAlreadyUse" xml:space="preserve">
+    <value>Mail adresi kullanımda</value>
+  </data>
+  <data name="InformationRegisterSuccess" xml:space="preserve">
+    <value>Harika! Kaydınız başarıyla tamamlandı. Eposta adresinize hesabınızı aktifleştirmeniz için bir mail gönderdik. Linke tıklayarak hesabınızı aktifleştirebilirsiniz. Hoşgeldiniz!</value>
+  </data>
+  <data name="InformationChangedEmail" xml:space="preserve">
+    <value>Harika! Epostanız başarıyla değiştirildi. Artık yeni epostanız ile giriş yapabilirsiniz</value>
+  </data>
+  <data name="InformationPasswordChanged" xml:space="preserve">
+    <value>Harika! Şifreniz başarıyla değiştirildi. Artık yeni şifreniz ile giriş yapabilirsiniz</value>
+  </data>
+  <data name="InformationSuccessActivateAccount" xml:space="preserve">
+    <value>Süper! Hesabınız başarıyla doğrulandı. Artık hesabınızın tüm özelliklerini eksiksiz kullanabilirsiniz. Sizi aramızda görmekten mutluluk duyduk!</value>
+  </data>
+  <data name="InformationInvalidEmailOrPassword" xml:space="preserve">
+    <value>Email ve/veya şifreniz hatalı</value>
+  </data>
+  <data name="InformationUnActivated" xml:space="preserve">
+    <value>Hesabınız aktif değil. Epostanıza gönderdiğimiz linki tıklayarak hesabınızı aktifleştirebilirsiniz</value>
+  </data>
+  <data name="InformationWrongSecretAnswer" xml:space="preserve">
+    <value>Güvenli cevabınızı yanlış girdiniz</value>
+  </data>
+  <data name="InformationChangeEmailRequest" xml:space="preserve">
+    <value>Eposta değiştirme isteğinizi onaylamak için şuanki epostanıza onay maili gönderdik. Gelen linke tıklayarak yeni eposta değişimini gerçekleştirebilirsiniz.</value>
+  </data>
+  <data name="InformationSecretsDeclared" xml:space="preserve">
+    <value>Daha önce kaydedilmiş güvenli soru ve/veya cevabınız bulunmaktadır. Detaylı bilgi için desteğe başvurabilirsiniz</value>
+  </data>
+  <data name="InformationPhoneNumberDeclared" xml:space="preserve">
+    <value>Hesabınıza tanımlı telefon numarası bulunmaktadır. Değiştirmek için desteğe başvurabilirsiniz</value>
+  </data>
+  <data name="InformationSuccessSecretsDeclare" xml:space="preserve">
+    <value>Harika! Güvenli soru ve/veya cevabınız başarıyla tanımlandı. Lütfen bu bilgileri kimseyle paylaşmayın</value>
+  </data>
+  <data name="InformationSuccessPhoneNumberDeclare" xml:space="preserve">
+    <value>Harika! telefon numaranız başarıyla tanımlandı. Lütfen bu bilgileri kimseyle paylaşmayın</value>
+  </data>
+  <data name="SocialMedia" xml:space="preserve">
+    <value>Sosyal Medya</value>
+  </data>
+  <data name="InformationEmailNotFoundForResend" xml:space="preserve">
+    <value>Bu epostaya kayıtlı aktifleştirme sürecinde bir hesap bulunamadı</value>
+  </data>
+  <data name="LoginMenu" xml:space="preserve">
+    <value>Giris</value>
+  </data>
+  <data name="DownloadLinkGoogleDrive" xml:space="preserve">
+    <value>https://drive.google.com/open?id=0B9AbIJ7ONRshLTNsWkJDdDU3dE0</value>
+  </data>
+  <data name="DownloadLinkLauncher" xml:space="preserve">
+    <value>http://setup.MoolsPayment.com/MoolsPaymentLauncher_Betav1.rar</value>
+  </data>
+  <data name="DownloadLinkMega" xml:space="preserve">
+    <value>https://mega.nz/#!iB9GkbSD!p0FMPqFUiQbzFUy_fYxquYcVMOOfTMIAFtIykn4H_s0</value>
+  </data>
+  <data name="DownloadLinkpCloud" xml:space="preserve">
+    <value>http://pc.cd/eDfctalK</value>
+  </data>
+  <data name="DownloadLinkServer1" xml:space="preserve">
+    <value>http://setup.MoolsPayment.com/MoolsPaymentFullClient_Betav1.rar</value>
+  </data>
+  <data name="DownloadLinkServer2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DownloadLinkTorrent" xml:space="preserve">
+    <value>http://setup.MoolsPayment.com/MoolsPaymentFullClient_Betav1.rar.torrent</value>
+  </data>
+  <data name="DownloadLinkYandexDisk" xml:space="preserve">
+    <value>https://yadi.sk/d/rh2jVI8CqxLiT</value>
+  </data>
+  <data name="YourTicketAnswered" xml:space="preserve">
+    <value>Ticket'iniz Cevaplandı</value>
+  </data>
+  <data name="YourTicketAnsweredInformation" xml:space="preserve">
+    <value>Açmış olduğunuz ticket destek yetkilisi tarafından yanıtlandı, cevabı görmek için tıklayın</value>
+  </data>
+  <data name="TicketNumberEmail" xml:space="preserve">
+    <value> numaralı </value>
+  </data>
+  <data name="InformationRegisterTooMany" xml:space="preserve">
+    <value>Çok sayıda üyelik alımı yapıldığından dolayı 1 saat engellendiniz</value>
+  </data>
+  <data name="InformationRegisterError" xml:space="preserve">
+    <value>Kayıt sırasında bir hata oluştu, lütfen tekrar kayıt olmayı deneyin</value>
+  </data>
+  <data name="Point" xml:space="preserve">
+    <value>Puan</value>
+  </data>
+  <data name="CurrentBalance" xml:space="preserve">
+    <value>Mevcut Bakiye</value>
+  </data>
+  <data name="WaitingPayments" xml:space="preserve">
+    <value>Bekleyen Ödemeler</value>
+  </data>
+  <data name="ApprovedPayments" xml:space="preserve">
+    <value>Onaylanan Ödemeler</value>
+  </data>
+  <data name="RejectedPayments" xml:space="preserve">
+    <value>İptal Edilen Ödemeler</value>
+  </data>
+  <data name="Payments" xml:space="preserve">
+    <value>Ödemeler</value>
+  </data>
+  <data name="PaymentQuery" xml:space="preserve">
+    <value>Ödeme Sorgulama</value>
+  </data>
+  <data name="ApiIntegration" xml:space="preserve">
+    <value>Api Entegrasyon</value>
+  </data>
+  <data name="ApiSettings" xml:space="preserve">
+    <value>Api Ayarları</value>
+  </data>
+  <data name="ApiDocuments" xml:space="preserve">
+    <value>Api Dökümanları</value>
+  </data>
+  <data name="AccountTransactions" xml:space="preserve">
+    <value>Hesap Hareketleri</value>
+  </data>
+  <data name="LoginLogs" xml:space="preserve">
+    <value>Giriş Kayıtları</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Hatalı</value>
+  </data>
+  <data name="Successful" xml:space="preserve">
+    <value>Başarılı</value>
+  </data>
+  <data name="Unsuccessful" xml:space="preserve">
+    <value>Başarısız</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Onaylandı</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>İptal Edildi</value>
+  </data>
+  <data name="EditApiSettings" xml:space="preserve">
+    <value>Api Ayarlarını Düzenle</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Bekliyor</value>
+  </data>
+  <data name="GoBack" xml:space="preserve">
+    <value>Geri Dön</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="GeneratedLinks" xml:space="preserve">
+    <value>Oluşturulan Linkler</value>
+  </data>
+  <data name="GoToTheMainMenu" xml:space="preserve">
+    <value>Ana menüye dön</value>
+  </data>
+  <data name="AccountHolder" xml:space="preserve">
+    <value>Hesap Sahibi</value>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>Hesap Numarası</value>
+  </data>
+  <data name="ATMFee" xml:space="preserve">
+    <value>ATM İşlem Ücreti</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>Banka Adı</value>
+  </data>
+  <data name="BranchCode" xml:space="preserve">
+    <value>Şube Kodu</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Ürün Adı</value>
+  </data>
+  <data name="PaymentAmount" xml:space="preserve">
+    <value>Ödenecek Net Tutar</value>
+  </data>
+  <data name="CancelPayment" xml:space="preserve">
+    <value>Ödeme işlemini iptal et</value>
+  </data>
+  <data name="ErrorMessage_2" xml:space="preserve">
+    <value>Geçersiz token! Malesef ödeme işleminize devam edemiyoruz, devam edebilmeniz için işlemlerinizi tekrardan başlatmanız gerekiyor.</value>
+  </data>
+  <data name="Refunded" xml:space="preserve">
+    <value>Geri çekildi</value>
+  </data>
+  <data name="UsableBalance" xml:space="preserve">
+    <value>Kullanılabilir Bakiye</value>
+  </data>
+  <data name="TotalCount" xml:space="preserve">
+    <value>Toplam</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Değiştir</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Banka</value>
+  </data>
+  <data name="AtmTransferEFT" xml:space="preserve">
+    <value>Atm/Havale-EFT</value>
+  </data>
+  <data name="BankMethods" xml:space="preserve">
+    <value>Banka Yöntemleri</value>
+  </data>
+  <data name="AmountOfPaid" xml:space="preserve">
+    <value>Ödediğiniz net tutar</value>
+  </data>
+  <data name="YouWantToPay" xml:space="preserve">
+    <value>Ödemek istediğiniz net tutar</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>TC Kimlik No</value>
+  </data>
+  <data name="NameSurname" xml:space="preserve">
+    <value>Adınız Soyadınız</value>
+  </data>
+  <data name="CreateNewEpin" xml:space="preserve">
+    <value>Yeni EPIN Oluştur</value>
+  </data>
+  <data name="GeneratedEpins" xml:space="preserve">
+    <value>Oluşturulan Epin Listesi</value>
+  </data>
+  <data name="UsedEpinHistory" xml:space="preserve">
+    <value>Kullanılan Epin Geçmişi</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="GizlilikPolitikamiz" xml:space="preserve">
+    <value>Üyelik Bilgilerinizin Gizliliği ve Güvenliği
+&lt;br&gt;
+Sitemize üye olmak için girmiş olduğunuz tüm bilgiler, www.moolslife.com tarafından 3. parti firma veya kişilerle paylaşılmayacaktır.
+&lt;br&gt;
+Sitemiz bazı dönemlerde müşterilerine ve üyelerine kampanya bilgileri, yeni ürünler hakkında bilgiler, promosyon bilgileri gönderebilir. Üyelerimiz bu gibi bilgileri alıp almama konusunda her türlü seçimi üye olurken yapabilir ve sonrasında üye girişi yaptıktan sonra hesap bilgileri bölümünden bu seçim değiştirilebilmektedir.
+&lt;br&gt;
+Üye olurken verdiğiniz tüm bilgilere sadece siz ulaşabilir ve siz değiştirebilirsiniz. Üye giriş bilgilerinizi güvenli koruduğunuz takdirde başkalarının sizinle ilgili bilgilere ulaşması ve bunları değiştirmesi mümkün değildir. Bu amaçla, üyelik işlemleri sırasında 128 bit SSL güvenlik alanı içinde hareket edilir. Bu sistem kırılması mümkün olmayan bir uluslararası bir şifreleme standardıdır.
+&lt;br&gt;
+Kredi Kartı Güvenliği
+&lt;br&gt;
+Şirketimiz, alışveriş sitelerimizden alışveriş yapan kredi kartı sahiplerinin güvenliğini ilk planda tutmaktadır. Kredi kartı bilgileriniz hiçbir şekilde sistemimizde saklanmamaktadır.
+&lt;br&gt;
+İşlemler sürecine girdiğinizde güvenli bir sitede olduğunuzu anlamak için dikkat etmeniz gereken iki şey vardır. Bunlardan biri tarayıcınızın en alt satırında bulunan bir anahtar ya da kilit simgesidir. Bu güvenli bir internet sayfasında olduğunuzu gösterir ve her türlü bilgileriniz şifrelenerek korunur. Bu bilgiler, ancak satış işlemleri sürecine bağlı olarak ve verdiğiniz talimat istikametinde kullanılır. Alışveriş sırasında kullanılan kredi kartı ile ilgili bilgiler alışveriş sitelerimizden bağımsız olarak Rapid tarafından 128bit SSL (Secure Sockets Layer) protokolü ile şifrelenip sorgulanmak üzere ilgili bankaya ulaştırılır. Kartın kullanılabilirliği onaylandığı takdirde alışverişe devam edilir. Kartla ilgili hiçbir bilgi tarafımızdan görüntülenemediğinden ve kaydedilmediğinden, üçüncü şahısların herhangi bir koşulda bu bilgileri ele geçirmesi engellenmiş olur.
+&lt;br&gt;
+Online olarak kredi kartı ile verilen siparişlerin ödeme/fatura/teslimat adresi bilgilerinin güvenilirliği şirketimiz tarafından Kredi Kartları Sahtekarlığı 'na karşı denetlenmektedir. Bu yüzden, alışveriş sitelerimizden ilk defa sipariş veren müşterilerin siparişlerinin tedarik ve teslimat aşamasına gelebilmesi için öncelikle finansal ve adres/telefon bilgilerinin doğruluğunun onaylanması gereklidir. Bu bilgilerin kontrolü için gerekirse kredi kartı sahibi müşteri ile veya ilgili banka ile irtibata geçilmektedir.
+&lt;br&gt;
+Bilgi hattı veya müşteri hizmetleri servisi bulunan ve açık adres ve telefon bilgilerinin belirtildiği İnternet alışveriş siteleri günümüzde daha fazla tercih edilmektedir. Bu sayede aklınıza takılan bütün konular hakkında detaylı bilgi alabilir, online alışveriş hizmeti sağlayan firmanın güvenirliği konusunda daha sağlıklı bilgi edinebilirsiniz.
+&lt;br&gt;
+Not: İnternet alışveriş sitelerinde firmanın açık adresinin ve telefonun yer almasına dikkat edilmesini tavsiye ediyoruz. Alışveriş yapacaksanız alışverişinizi yapmadan ürünü aldığınız mağazanın bütün telefon / adres bilgilerini not edin. Eğer güvenmiyorsanız alışverişten önce telefon ederek teyit edin.
+&lt;br&gt;
+E-Posta Güvenliği
+&lt;br&gt;
+Sitemiz Müşteri Hizmetleri’ne, herhangi bir siparişinizle ilgili olarak göndereceğiniz e-postalarda, asla kredi kartı numaranızı veya şifrelerinizi yazmayınız. E-postalarda yer alan bilgiler üçüncü şahıslar tarafından görülebilir. Şirketimiz e-postalarınızdan aktarılan bilgilerin güvenliğini hiçbir koşulda garanti edemez. 
+&lt;br&gt;&lt;br&gt;
+MoolsLife Payment</value>
+  </data>
+  <data name="KullaniciSozlesmesi" xml:space="preserve">
+    <value>Bu sözleşme, MoolsLife’in müşteriye hosting servislerinin satış ve kullanım şartlarını düzenlemek için hazırlanmıştır. Müşteri ve MoolsLife, aşağıda belirtilen şartlar üzerinde tam bir anlaşmaya varmışlardır.
+&lt;br&gt;
+TARAFLAR MoolsLife  Sözleşmenin bundan sonraki bölümünde kısaca "MoolsLife" olarak anılacaktır.
+&lt;br&gt;
+Müşteri : Bu sözleşmeyi, MoolsLife’in online satış bölümünde yapacağı başvuru esnasında onaylayan şahıs veya kurum.
+&lt;br&gt;
+SÖZLEŞMENİN YÜRÜRLÜĞE GİRİŞİ VE SÜRESİ Müşteri'nin MoolsLife’in web sitesinden yapacağı online başvuru ile sözleşme yürürlüğe girer. Sözleşme süresizdir.
+&lt;br&gt;
+BİLDİRİMLER MoolsLife, müşteriye yapacağı her türlü bildirim için, öncelikle müşterinin kayıt işlemi esnasında bildirdiği e-posta adresi veya GSM Numarası kullanacaktır. Bu adres ve GSM'in geçerli olması konusundaki sorumluluk müşteriye aittir.
+&lt;br&gt;
+Müşteri online kayıt esnasında ve/veya daha sonra MoolsLife 'e bildireceği bilgilerin doğru ve güncel olduğunu beyan eder. MoolsLife 'e müşteri tarafından bildirilen bilgilerin yanlış, eksik veya güncel olmamasından dolayı meydana gelecek aksaklık ve zararlardan dolayı, müşteri MoolsLife 'e hiçbir zarar tazmini talebinde bulunmayacağını peşinen kabul eder.
+&lt;br&gt;
+MoolsLife 'İN SAĞLAYACAĞI SERVİSLER MoolsLife, müşterinin online başvuru esnasında bildirdiği servislerin kendi sisteminde kurulumunu gerçekleştirir, ilgili ücretlerin kredi kartından peşin tahsilatını takiben, müşterinin servislerini kullanıma açar ve müşteriyi bilgilendirir.
+&lt;br&gt;
+ÜCRETLER VE ÖDEME Müşteri, MoolsLife tüm servisleri ile ilgili kullanım ücretlerini ve ilgili vergileri (kullanılan servis içeriğine bağlı olarak) ödemeyi kabul eder. Ücretler, her kullanım dönemi başında peşin olarak tahsil edilecektir.
+&lt;br&gt;
+MoolsLife, servis ücretlerini, müşteriye sözleşme anında yazılı doküman, web sayfası veya e-posta yolu ile bildirmektedir. MoolsLife her türlü servis ücretlendirmesi ile ilgili düzenleme yapma hakkını saklı tutar. Servis ücretlerinde gelecekte meydana gelebilecek değişiklikler, MoolsLife web sitesi ve/veya e-posta yolu ile müşteriye bildirilecektir. Müşterinin MoolsLife servislerini kullanmaya devam etmesi, yürürlükteki sözleşme şartlarını ve geçerli ücret tarifesi üzerinden ödeme yapmayı kabul ettiğini belirtir.
+&lt;br&gt;
+Müşteri sözleşmeyi dilediği anda, aylık hesap planlarında 5 işgünü önceden, yıllık hesap planlarında 15 işgünü önceden haber vermek şartı ile, MoolsLife 'e yapacağı yazılı başvuru (posta, e-posta) yada müşteri paneli yolu ile sonlandırabilir. Bu durumda, MoolsLife, müşterinin içinde bulunduğu kullanım dönemini takip eden dönem için yenileme işlemi yapmayacaktır. Sözleşmenin sona erdiği tarihte, müşterinin MoolsLife 'e olan borçları, sonlanma tarihinde kredi kartı hesabından tahsil edilecektir. Sözleşmenin müşteri tarafından sonlandırılması durumunda, müşteriye ait MoolsLife 'de bulundurulan hizmete ait bütün kayıtlar silinecektir.
+&lt;br&gt;
+Müşteri, sözleşmenin yürürlükte kaldığı süre boyunca, MoolsLife 'e tahsilat için bildirdiği kredi kartı bilgilerinin güncelliğinden sorumludur. Müşteri, kredi kartının son kullanma tarihinin değişmesi durumunda, bu bilgiyi MoolsLife 'e iletecektir.
+&lt;br&gt;
+MoolsLife, müşterinin kredi kartı hesabından tahsilat gerçekleştirilememesi durumunda, müşterinin ilgili servislerini askıya alma veya sözleşmeyi tamamen sonlandırma hakkını saklı tutar.
+&lt;br&gt;
+MoolsLife, müşterinin tercih ettiği durumlarda yada talebi üzerine, servislerin bağlı bulunduğu alan adı ile ilgili yenileme işlemlerini gerçekleştirerek, ilgili ücretlerin tahsilatını kredi kartı hesabından gerçekleştirecektir.
+&lt;br&gt;
+MoolsLife 'İN SINIRLI SORUMLULUĞU MoolsLife müşteriye sağlanan servislerin sürekliliğinin sağlanması için gerekli çabayı sarf edecektir. Bununla beraber, MoolsLife servislerinin müşterinin ihtiyaçlarını tam olarak karşılayacağını, kesintisizliğini, hatasızlığını ve güvenilirlik seviyesi garanti etmez. Müşterinin bu sözleşme kapsamında sağlanan herhangi bir servisin kullanımından ve/veya kullanılamamasından dolayı oluşabilecek direkt ve/veya dolaylı zararlarında MoolsLife 'in sorumluluğu, en fazla sağlanan servislerin toplam bedeli kadar olabilir.
+&lt;br&gt;
+MoolsLife KAYITLARININ GEÇERLİLİĞİ Aksi belirtilen durumlar hariç, müşterinin yapacağı online işlemler ile ilgili olarak, MoolsLife kayıtları geçerli sayılacaktır.
+&lt;br&gt;
+MÜŞTERİ'NİN HAKLARININ DEVRİ Müşteri, bu sözleşme kapsamındaki servislerini müşteri panelinden MoolsLife 'in onayı olmadan devredebilir. Devir işleminden kaynaklanabilecek anlaşmazlıklardan MoolsLife hiçbir şekilde sorumlu değildir.
+&lt;br&gt;
+SÖZLEŞMENİN SONLANMASI MoolsLife, müşteriye 5 işgünü önceden yazılı bildirim yaparak, bu sözleşmeyi sebep göstermeden sonlandırabilir. Bu durumda, müşterinin MoolsLife 'e ödemesini önceden gerçekleştirdiği, ancak kullanımı gerçekleşmeyen servislerle ilgili ücretler, müşteriye iade edilir. Müşterinin bu sözleşmede veya MoolsLife Servis Şartlarında belirtilen şartları ihlal etmesi durumunda, MoolsLife, müşteriye sağlanan servisleri önceden haber vermeden sonlandırabilir ve sözleşmeyi sonlandırabilir. Bu durumda, müşterinin önceden ödediği ücretlerin iadesi gerçekleştirilmez. Müşterinin kredi kartından servislerle ilgili tahsilatların gerçekleştirilememesi durumunda, MoolsLife sözleşmeyi sonlandırabilir. Bu durumda, müşterinin önceden ödediği ücretlerin iadesi gerçekleştirilmez. Müşteri sözleşmeyi dilediği anda, 5 işgünü önceden haber vermek şartı ile, MoolsLife 'e yapacağı yazılı başvuru (posta, e-posta, fax) yolu ile sonlandırabilir.
+&lt;br&gt;
+SERVİS KULLANIM ŞARTLARININ KABULÜ Müşteri, bu sözleşmeyi onaylayarak, yürürlükteki " MoolsLife Servis Şartları"nı kabul etmiştir. " MoolsLife Servis Şartları"nın geçerli hali, MoolsLife 'in www.moolslife.com web adresindeki Servis Şartları bölümünde yayınlanmaktadır.
+&lt;br&gt;
+ONLINE SÖZLEŞMENİN GEÇERLİLİĞİ Müşterinin online başvurusu esnasında onayladığı bu sözleşmede zaman içerisinde gerçekleşecek değişiklikler, MoolsLife 'in www.moolslife.com adresine sahip web sitesinde yayınlanarak ve/veya e-posta yolu ile müşteriye bildirilecektir. Müşteri, MoolsLife servislerini kullanmaya devam ederek, yürürlükteki sözleşme şartlarını kabul etmiş sayılacaktır
+&lt;br&gt;
+UYUŞMAZLIKLARIN ÇÖZÜMÜ İşbu sözleşmeden kaynaklanacak olan her türlü uyuşmazlığın çözümünde İstanbul (Merkez) Asliye Ticaret Mahkemeleri ve İstanbul İcra Müdürlükleri yetkilidir. 
+&lt;br&gt;&lt;br&gt;
+MoolsLife Payment</value>
+  </data>
+  <data name="SatisSozlesmesi" xml:space="preserve">
+    <value>MADDE 1 - Sözleşmenin Tarafları&lt;br&gt;
+SATICI: MoolsLife Payment
+&lt;br&gt;
+MADDE 2 - Sözleşmenin Konusu&lt;br&gt;
+İş bu sözleşmenin konusu, Alıcının Satıcıya ait www.moolslife.com web sitesinden elektronik ortamda sipariş verdiği, sözleşmede bahsi geçen nitelikleri haiz ve yine sözleşmede satış fiyatı belirtilen mal/hizmetin satışı ve teslimi ile ilgili olarak 4077 sayılı Tüketicilerin Korunması Hakkındaki Kanun ve Mesafeli Sözleşmeler Uygulama Esas ve Usulleri Hakkında Yönetmelik hükümleri gereğince tarafların hak ve yükümlülüklerinin saptanmasıdır. Alıcı, satışa konu mal/hizmetlerin temel nitelikleri, satış fiyatı, ödeme şekli, teslimat koşulları vs. satışa konu mal/hizmet ile ilgili tüm ön bilgiler ve “cayma” hakkı konusunda bilgi sahibi olduğunu, bu ön bilgileri elektronik ortamda teyit ettiğini ve sonrasında mal/hizmeti sipariş verdiğini is bu sözleşme hükümlerince kabul ve beyan eder. www.moolslife.com sitesinde ödeme sayfasında yer alan ön bilgilendirme ve fatura iş bu sözleşmenin ayrılmaz parçalarıdır.
+&lt;br&gt;
+MADDE 3 - Sözleşme Tarihi&lt;br&gt;
+Satıcı tarafından daha önce imzalanmış bulunan iş bu iki nüsha sözleşme alıcı tarafından .... tarihinde imzalanarak kabul edilmiş ve bir nüshası alıcının mail adresine mail gönderilecektir.
+&lt;br&gt;
+MADDE 4 - Mal/Hizmetin Teslimi, Sözleşmenin İfa Yeri ve Teslim Şekli&lt;br&gt;
+Mal/hizmet, alıcının teslimini talep etmiş olduğu .... adresinde ....’a teslim edilecektir.
+&lt;br&gt;
+MADDE 5 - Teslimat Masrafları ve İfası&lt;br&gt;
+Teslimat masrafları alıcıya aittir. Satıcı, web sitesinde, ilan ettiği rakamın üzerinde alışveriş yapanların teslimat ücretinin kendisince karşılanacağını yada kampanya dahilinde ücretsiz teslimat yapacağını beyan etmişse, teslimat masrafı satıcıya aittir. Teslimat; stokun müsait olması ve mal bedelinin satıcının hesabına geçmesinden sonra en kısa sürede yapılır. Satıcı, mal/hizmetin siparişinden itibaren 30 (Otuz) gün içinde teslim eder ve bu süre içinde yazılı bildirimle ek 10 (on) günlük süre uzatım hakkını saklı tutar. Herhangi bir nedenle mal/hizmet bedeli ödenmez veya banka kayıtlarında iptal edilir ise, satıcı mal/hizmetin teslimi yükümlülüğünden kurtulmuş kabul edilir.
+&lt;br&gt;
+MADDE 6 - Alıcının Beyan ve Taahhütleri&lt;br&gt;
+Alıcı, sözleşme konusu mal/hizmeti teslim almadan önce muayene edecek; ezik, kırık, ambalajı yırtılmış vb. hasarlı ve ayıplı mal/hizmeti kargo şirketinden teslim almayacaktır. Teslim alınan mal/hizmetin hasarsız ve sağlam olduğu kabul edilecektir. Teslimden sonra mal/hizmetin özenle korunması borcu, alıcıya aittir. Cayma hakkı kullanılacaksa mal/hizmet kullanılmamalıdır. Fatura iade edilmelidir. Mal/hizmetin tesliminden sonra alıcıya ait kredi kartının alıcının kusurundan kaynaklanmayan bir şekilde yetkisiz kişilerce haksız veya hukuka aykırı olarak kullanılması nedeni ile ilgili banka veya finans kuruluşunun mal/hizmet bedelini satıcıya ödememesi halinde, Alıcı kendisine teslim edilmiş olması kaydıyla mal/hizmeti 3 (Üç) gün içinde satıcıya göndermekle yükümlüdür. Bu takdirde teslimat giderleri alıcıya aittir.
+&lt;br&gt;
+MADDE 7 - Satıcının Beyan ve Taahhütleri&lt;br&gt;
+Satıcı, sözleşme konusu mal/hizmetin sağlam, eksiksiz, siparişte belirtilen niteliklere uygun ve varsa garanti belgeleri ve kullanım kılavuzları ile teslim edilmesinden sorumludur. Sözleşme konusu mal/hizmet, alıcıdan başka bir kişi/kuruluşa teslim edilecek ise, teslim edilecek kişi/kuruluşun teslimatı kabul etmemesinden satıcı sorumlu tutulamaz. Satıcı, cayma beyanının kendisine ulaşmasından sonra 10 (on) gün içinde mal/hizmet bedelini, varsa kıymetli evrakı iade eder. Mal/hizmeti 20 (yirmi) gün içinde iade alir. Haklı gerekçelerle satıcı, sözleşmedeki ifa süresi dolmadan alıcıya eşit kalite ve fiyatta tedarik edebilir. Satıcı mal/hizmetin ifasının imkânsızlaştığını düşünüyorsa, sözleşmenin ifa süresi dolmadan alıcıya bildirir. Ödenen bedel ve varsa belgeler 10 (on) gün içinde iade edilir. Garanti belgesi ile satılan mal/hizmetlerden olan veya olmayan mal/hizmetlerden arızalı veya bozuk olan mal/hizmetler, garanti şartları içinde gerekli onarımın yapılması için satıcıya gönderilebilir, bu takdirde teslimat giderleri satıcı tarafından karşılanacaktır.
+&lt;br&gt;
+MADDE 8 - Sözleşmeye Konu Mal/Hizmetin Özellikleri&lt;br&gt;
+Mal/hizmetin cinsi ve türü, miktarı, marka/modeli, rengi ve tüm vergiler dâhil satış bedeli www.moolslife.com adlı web sitesindeki mal/hizmet tanıtım sayfasında yer alan bilgilerde ve iş bu sözleşmenin ayrılmaz parçası sayılan faturada belirtildiği gibidir.
+&lt;br&gt;
+MADDE 9 - Mal/Hizmetin Peşin Fiyatı&lt;br&gt;
+Mal/hizmetin peşin fiyatı sipariş sonu mail atılan örnek fatura ve ürün ile birlikte müşteriye gönderilen fatura içeriğinde mevcuttur.
+&lt;br&gt;
+MADDE 10 - Vadeli Fiyat&lt;br&gt;
+Mal/hizmetin satış fiyatına yapılan vadeye göre fiyatı sipariş sonu mail atılan örnek fatura ve ürün ile birlikte müşteriye gönderilen fatura içeriğinde mevcuttur.
+&lt;br&gt;
+MADDE 11 - Faiz&lt;br&gt;
+Her yıl Türkiye Cumhuriyeti Hükümetinin belirlediği faiz oranından ve her halde %30’dan fazla olamaz. Alıcı çalıştığı bankaya karşı sorumludur.
+&lt;br&gt;
+MADDE 12 - Peşinat Tutarı&lt;br&gt;
+Mal/hizmetin peşinat tutarı sipariş sonu mail atılan örnek fatura ve ürün ile birlikte müşteriye gönderilen fatura içeriğinde mevcuttur.
+&lt;br&gt;
+MADDE 13 - Ödeme Planı&lt;br&gt;
+Alıcının, kredi kartı ile ve taksitle alışveriş yapması durumunda siteden seçmiş olduğu taksit biçimi geçerlidir. Taksitlendirme işlemlerinde, alıcı ile kart sahibi banka arasında imzalamış bulunan sözleşmenin ilgili hükümleri geçerlidir. Kredi kartı ödeme tarihi banka ile alıcı arasındaki sözleşme hükümlerince belirlenir. Alıcı, ayrıca bankanın gönderdiği hesap özetinden taksit sayısını ve ödemelerini takip edebilir.
+&lt;br&gt;
+MADDE 14 - Cayma Hakkı&lt;br&gt;
+lıcı, sözleşme konusu mal/hizmetin kendisine veya gösterdiği adresteki kişi/kuruluşa tesliminden itibaren 7 (yedi) gün içinde cayma hakkını kullanabilir. Cayma hakkının kullanılması için aynı süre içinde satıcının müşteri hizmetlerine e-posta veya telefon ile bildirimde bulunulması ve mal/hizmetin 15. madde hükümleri çerçevesinde ve iş bu sözleşmenin ayrılmaz parçası olan ve www.moolslife.com web sitesinde yayınlanmış olan önbilgiler gereğince, kullanılmamış olması şarttır. Bu hakkın kullanılması halinde, 3. kişiye veya alıcıya teslim edilen mal/hizmete ilişkin fatura aslının iadesi zorunludur. Cayma hakkına ilişkin ihbarın ulaşmasını takip eden 7 gün içinde mal/hizmet bedeli alıcıya iade edilir ve 20 (yirmi) günlük süre içinde mal/hizmet iade alınır. Fatura aslı gönderilmezse alıcıya KDV ve varsa diğer yasal yükümlülükler iade edilemez. Cayma hakkı nedeni ile iade edilen mal/hizmetin teslimat bedeli satıcı tarafından karşılanır.
+&lt;br&gt;
+MADDE 15 - Cayma Hakkı Kullanılamayacak Mal/Hizmetler&lt;br&gt;
+Niteliği itibarıyla iade edilemeyecek mal/hizmetler, hızla bozulan ve son kullanma tarihi geçen mal/hizmetler, tek kullanımlık mal/hizmetler, hijyenik mal/hizmetler, kopyalanabilir her türlü yazılım ve programlardır. Ayrıca, her türlü yazılım ve programlarında, Çeşitli mediaların (Dvd,Cd v.b), bilgisayar ve kırtasiye sarf malzemelerinde (toner, kartuş, şerit v.b) ile kozmetik malzemelerinde cayma hakkının kullanılabilmesi için mal/hizmetin ambalajının açılmamış, bozulmamış ve kullanılmamış olmaları şartı bulunmaktadır.
+&lt;br&gt;
+MADDE 16 - Temerrüd Hali ve Hukuki Sonuçları&lt;br&gt;
+Alıcı, kredi kartı ile yapmış olduğu işlemlerinde temerrüde düşmesi halinde kart sahibi bankanın kendisi ile yapmış olduğu kredi kartı sözleşmesi çerçevesinde faiz ödeyecek ve bankaya karşı sorumlu olacaktır. Bu durumda ilgili banka hukuki yollara başvurabilir; doğacak masrafları ve vekalet ücretini alıcıdan talep edebilir ve her koşulda alıcının borcundan dolayı temerrüde düşmesi halinde, alıcı, borcun gecikmeli ifasından dolayı satıcının oluşan zarar ve ziyanını ödemeyi kabul eder.
+&lt;br&gt;
+MADDE 17 - Yetkili Mahkeme&lt;br&gt;
+İş bu sözleşmeden kaynaklanabilecek ihtilaflarda, Sanayi ve Ticaret Bakanlığınca ilan edilen değere kadar Tüketici Hakem Heyetleri, belirtilen değer üstüne Tüketici Mahkemeleri; bulunamayan yerlerde Asliye Hukuk Mahkemeleri yetkilidir.
+&lt;br&gt;&lt;br&gt;
+MoolsLife Payment</value>
+  </data>
+  <data name="iadesartlari" xml:space="preserve">
+    <value>-Alıcı satın almış olduğu ürünün kendisine veya gösterdiği adresteki kişiye / kuruluşa teslimini müteakip yedi (7) gün içerisinde, söz konusu ürünün iadesi için şirketimize faks, e-posta veya telefon aracılığı ile başvuruda bulunmak ve ürünün kullanılmamış olması şartı aranmak sureti ile ürünün iadesini talep edebilir.
+&lt;br&gt;
+-Buna ek olarak bahsi geçen ürünün iade bedeli; alıcı tarafından ne şekilde ödeme yapılmışsa, aynı türden tarafımızca takribi yedi (7) iş günü içerisinde alıcıya sunulacaktır (*)
+&lt;br&gt;
+-Almış olduğunuz Epin tamamen kuruluşunuza yada şahsınıza ait olup firmamız tarafından sadece aracılığı yapılmakta ve tüm teknik destek tarafınıza sağlanmaktadır. Almış olduğunuz Epin ile ilgili herhangi bir teknik aksaklık dışında kesinlikle iade kabul edilmemektedir. 
+&lt;br&gt;&lt;br&gt;
+MoolsLife Payment</value>
+  </data>
+</root>

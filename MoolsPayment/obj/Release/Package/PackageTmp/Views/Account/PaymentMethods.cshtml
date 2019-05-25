@@ -1,0 +1,197 @@
+﻿@using Resources
+@using MoolsPayment.Models
+@model IEnumerable<MoolsPayment.Models.Methods>
+
+@{
+    ViewBag.Title = Home.PaymentMethods;
+    var methodPreferences = (IEnumerable<MethodPreference>)ViewBag.methodPreferences;
+}
+
+
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index","Home")">Panel</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("PaymentMethods", "Account")">@Home.PaymentMethods</a>
+        </li>
+    </ul>
+</div>
+<h3 class="page-title"></h3>
+<!-- END PAGE HEADER-->
+
+
+<div class="portlet box blue-madison">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-comments"></i>@Home.PaymentMethods
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="reload" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="remove" data-original-title="" title="">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-scrollable">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            #@Html.DisplayNameFor(model => model.MethodID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Commission)
+                        </th>
+                        <th>
+                            Currency
+                        </th>
+                        <th>
+                            @Home.Status
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var n in Model.Where(m => m.MainMethodID == null))
+                        {
+                            <tr>
+                                <td>
+                                    @n.Name
+                                </td>
+                                <td>
+                                    @n.MethodID
+                                </td>
+                                <td>
+                                    @if (n.Commission == 0)
+                                    {
+                                        @Html.Raw("-")
+                                    }
+                                    else
+                                    {
+                                        @Html.Raw("% "+ n.Commission)
+                                    }
+                                   
+                                </td>
+                                <td>
+                                    @n.PaymentCurrency.Name
+                                </td>
+                                <td>
+
+                                    @if (methodPreferences.Any(mP => mP.MethodID == n.MethodID))
+                                    {
+                                        <span class="label label-sm label-danger">
+                                            <a href="/ChangeMethodPreference/@n.MethodID">@Home.Off</a>
+
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-success">
+                                            <a href="/ChangeMethodPreference/@n.MethodID">@Home.On</a>
+                                        </span>
+                                    }
+
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="portlet box red">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-comments"></i>@Home.BankMethods (@Home.AtmTransferEFT)
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="reload" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="remove" data-original-title="" title="">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-scrollable">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            #@Html.DisplayNameFor(model => model.MethodID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Commission)
+                        </th>
+                        <th>
+                            Currency
+                        </th>
+                        <th>
+                            @Home.Status
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var n in Model.Where(m => m.MainMethodID != null && !methodPreferences.Any(mM => mM.MethodID == m.MainMethodID)))
+                        {
+                            <tr>
+                                <td>
+                                    @n.Name
+                                </td>
+                                <td>
+                                    @n.MethodID
+                                </td>
+                                <td>
+                                    % @n.Commission
+                                </td>
+                                <td>
+                                    @n.PaymentCurrency.Name
+                                </td>
+                                <td>
+
+                                    @if (methodPreferences.Any(mP => mP.MethodID == n.MethodID))
+                                    {
+                                        <span class="label label-sm label-danger">
+                                            <a href="/ChangeMethodPreference/@n.MethodID">@Home.Off</a>
+
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-success">
+                                            <a href="/ChangeMethodPreference/@n.MethodID">@Home.On</a>
+                                        </span>
+                                    }
+
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- END DASHBOARD STATS -->
+<div class="clearfix"></div>

@@ -1,0 +1,155 @@
+﻿@using Resources
+@model IEnumerable<MoolsPayment.Models.AccountTransaction>
+
+@{
+    ViewBag.Title = "AccountTransactions";
+}
+
+
+
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index","Home")">Panel</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("AccountTransactions", "Account")">@Home.AccountTransactions</a>
+        </li>
+    </ul>
+</div>
+<h3 class="page-title"></h3>
+<!-- END PAGE HEADER-->
+
+
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-comments"></i>@Home.AccountTransactions
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="reload" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="remove" data-original-title="" title="">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-scrollable">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            #TransactionId
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Payments.Type)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PaymentID)
+                        </th>
+                        <th>
+                           Net @Html.DisplayNameFor(model => model.Payments.Amount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Payments.Status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OldBalance)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NewBalance)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Usable)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var n in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @n.AccountTransactionID
+                                </td>
+                                <td>
+                                    @n.Payments.PaymentType.Name
+                                </td>
+                                <td>
+                                    <a href="/PaymentQuery?id=@n.PaymentID">
+                                        @n.PaymentID
+                                    </a>
+                                </td>
+                                <td>
+                                    @if (n.Payments.Amount >= 0)
+                                    {
+                                        <span class="label label-sm label-success">
+                                            +
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-danger">
+                                            -
+                                        </span>
+                                    }
+                                    &nbsp;@(n.Payments.Amount-n.Payments.Commission)
+                                </td>
+                                <td>
+                                    @n.Date
+                                </td>
+                                <td>
+                                    @if (n.Payments.Status == 1)
+                                    {
+                                        <span class="label label-sm label-success">
+                                            @Home.Successful
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-danger">
+                                            @Home.Unsuccessful
+                                        </span>
+                                    }
+                                </td>
+                                <td>
+                                    @n.OldBalance
+                                </td>
+                                <td>
+                                    @n.NewBalance
+                                </td>
+                                <td>
+                                    @if (n.Usable == true)
+                                    {
+                                        <span class="label label-sm label-success">
+                                            @Home.Yes
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-danger">
+                                            @Home.No
+                                        </span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- END DASHBOARD STATS -->
+<div class="clearfix"></div>

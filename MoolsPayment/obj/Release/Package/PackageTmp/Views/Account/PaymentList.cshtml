@@ -1,0 +1,183 @@
+﻿@using Resources
+@model IEnumerable<MoolsPayment.Models.Payments>
+
+@{
+    ViewBag.Title = @Home.PaymentList;
+}
+
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index","Home")">Panel</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("PaymentList", "Account")">
+                @Home.PaymentList @if (ViewBag.status != null)
+                {
+                    @Html.Raw("(" + ViewBag.status + ")")
+                }
+            </a>
+        </li>
+    </ul>
+</div>
+<h3 class="page-title"></h3>
+<!-- END PAGE HEADER-->
+
+
+<div class="portlet box
+                        @if (ViewBag.status != null)
+                        {
+                            if(ViewBag.status == "Rejected")
+                            {
+                                @Html.Raw("red")
+                            }
+                            else if(ViewBag.status == "Waiting")
+                            {
+                                @Html.Raw("purple-plum")
+                            }
+                            else if(ViewBag.status == "Approved")
+                            {
+                                @Html.Raw("green")
+                            }
+                        }
+                        else
+                        {
+                            @Html.Raw("green")
+                        }">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-comments"></i>@Home.PaymentList @if (ViewBag.status != null)
+            {
+                @Html.Raw("(" + ViewBag.status + ")")
+            }
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="reload" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="remove" data-original-title="" title="">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-scrollable">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            #PaymentId
+                        </th>
+                        <th>
+                            Method @Html.DisplayNameFor(model => model.Methods.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Links1.customer_NameSurname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Links1.customer_Phone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Links1.customer_Email)
+                        </th>
+                        <th>
+                            Net @Html.DisplayNameFor(model => model.Amount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Amount)
+                        </th>
+                        <th>
+                            Currency
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProcessDate)
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var n in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="/PaymentQuery?id=@n.PaymentID">
+                                        @n.PaymentID
+                                    </a>
+                                </td>
+                                <td>
+                                    @n.Methods.Name
+                                </td>
+                                <td>
+                                    @n.Links1.customer_NameSurname
+                                </td>
+                                <td>
+                                    +@n.Links1.customer_PhoneCountryCode @n.Links1.customer_Phone
+                                </td>
+                                <td>
+                                    @n.Links1.customer_Email
+                                </td>
+                                <td>
+                                    @(n.Amount - n.Commission)
+                                </td>
+                                <td>
+                                    @n.Amount
+                                </td>
+                                <td>
+                                    @n.Links1.PaymentCurrency.Name
+                                </td>
+                                <td>
+                                    @n.Date
+                                </td>
+                                <td>
+                                    @if (n.Status == 1)
+                                    {
+                                        <span class="label label-sm label-success">
+                                            @Home.Approved
+                                        </span>
+                                    }
+                                    else if (n.Status == -1)
+                                    {
+                                        <span class="label label-sm label-danger">
+                                            @Home.Rejected
+                                        </span>
+                                    }
+                                    else if (n.Status == -2)
+                                    {
+                                        <span class="label label-sm label-danger">
+                                            @Home.Refunded
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-info">
+                                            @Home.Waiting
+                                        </span>
+                                    }
+                                </td>
+                                <td>
+                                    @n.ProcessDate
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- END DASHBOARD STATS -->
+<div class="clearfix"></div>

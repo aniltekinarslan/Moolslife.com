@@ -1,0 +1,76 @@
+﻿@using Resources
+@model IEnumerable<MoolsPayment.Models.MoolsEpin>
+
+@{
+    ViewBag.Title = Home.GeneratedEpins;
+}
+
+<h2>@Home.GeneratedEpins</h2>
+
+<p>
+    @Html.ActionLink(@Home.CreateNewEpin, "CreateNewEpin")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            #Id
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoolsEpinGameProducts.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            Currency
+        </th>
+        <th>
+            Created Date
+        </th>
+        <th>
+            isBonus?
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoolsEpinID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoolsEpinGameProducts.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentCurrency.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @if (item.IsBonus == true)
+            {
+                <span class="label label-sm label-success">
+                    @Home.Yes
+                </span>
+            }
+            else
+            {
+                <span class="label label-sm label-danger">
+                    @Home.No
+                </span>
+            }
+
+        </td>
+    </tr>
+}
+
+</table>

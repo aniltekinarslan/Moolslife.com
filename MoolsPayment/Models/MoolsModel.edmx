@@ -1,0 +1,1875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MoolsLifeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="AccountID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Username" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Balance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="UsableBalance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="DealerCode" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="255" />
+          <Property Name="NotifyUrl" Type="varchar" MaxLength="255" />
+          <Property Name="Discount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ReturnUrlSuccess" Type="varchar" MaxLength="255" />
+          <Property Name="ReturnUrlFailed" Type="varchar" MaxLength="255" />
+          <Property Name="LogoImageUrl " Type="varchar" MaxLength="255" />
+          <Property Name="PaymentCancelRedirectUrl " Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="AccountTransaction">
+          <Key>
+            <PropertyRef Name="AccountTransactionID" />
+          </Key>
+          <Property Name="AccountTransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="PaymentID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="OldBalance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="NewBalance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Usable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorID" />
+          </Key>
+          <Property Name="ErrorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountID" Type="int" />
+          <Property Name="PaymentID" Type="int" />
+          <Property Name="ErrorCode" Type="varchar" MaxLength="255" />
+          <Property Name="Message " Type="text" />
+          <Property Name="LastDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="LinkID" />
+          </Key>
+          <Property Name="LinkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="Token" Type="varchar" MaxLength="255" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Currency" Type="int" Nullable="false" />
+          <Property Name="IpAddress" Type="varchar" MaxLength="15" />
+          <Property Name="OrderID" Type="varchar" MaxLength="255" />
+          <Property Name="product_Code" Type="varchar" MaxLength="255" />
+          <Property Name="product_Name" Type="varchar" MaxLength="255" />
+          <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsDead" Type="bit" Nullable="false" />
+          <Property Name="PaymentID" Type="int" />
+          <Property Name="customer_Identity" Type="varchar" MaxLength="255" />
+          <Property Name="customer_Phone" Type="varchar" MaxLength="255" />
+          <Property Name="customer_NameSurname" Type="varchar" MaxLength="255" />
+          <Property Name="customer_Email" Type="varchar" MaxLength="255" />
+          <Property Name="customer_PhoneCountryCode" Type="varchar" MaxLength="255" />
+          <Property Name="product_ImageUrl" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LoginLog">
+          <Key>
+            <PropertyRef Name="LoginID" />
+          </Key>
+          <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="Ip" Type="varchar" MaxLength="255" />
+          <Property Name="SessionID" Type="varchar" MaxLength="255" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Balance1" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Balance2" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="MethodCommissionTree">
+          <Key>
+            <PropertyRef Name="MethodCommissionTreeID" />
+          </Key>
+          <Property Name="MethodCommissionTreeID" Type="int" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="MethodID" Type="int" Nullable="false" />
+          <Property Name="Commission" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MethodPreference">
+          <Key>
+            <PropertyRef Name="MethodPreferenceID" />
+          </Key>
+          <Property Name="MethodPreferenceID" Type="int" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="MethodID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Methods">
+          <Key>
+            <PropertyRef Name="MethodID" />
+          </Key>
+          <Property Name="MethodID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="255" />
+          <Property Name="AccountHolder" Type="varchar" MaxLength="255" />
+          <Property Name="BranchName" Type="varchar" MaxLength="255" />
+          <Property Name="BranchCode" Type="varchar" MaxLength="255" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="255" />
+          <Property Name="IbanCode" Type="varchar" MaxLength="255" />
+          <Property Name="IsAtmActive" Type="bit" Nullable="false" />
+          <Property Name="AtmFee" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="AtmDescription" Type="varchar" MaxLength="255" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="Commission" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Currency" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="MainMethodID" Type="int" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <EntityType Name="MoolsEpin">
+          <Key>
+            <PropertyRef Name="MoolsEpinID" />
+          </Key>
+          <Property Name="MoolsEpinID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="100" />
+          <Property Name="Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Currency" Type="int" Nullable="false" />
+          <Property Name="GameProductID" Type="int" />
+          <Property Name="CreatedAccountID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsBonus" Type="bit" Nullable="false" />
+          <Property Name="Dealer" Type="int" />
+        </EntityType>
+        <EntityType Name="MoolsEpinDealer">
+          <Key>
+            <PropertyRef Name="MoolsEpinDealerID" />
+          </Key>
+          <Property Name="MoolsEpinDealerID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MoolsEpinGameProducts">
+          <Key>
+            <PropertyRef Name="MoolsEpinGameProductID" />
+          </Key>
+          <Property Name="MoolsEpinGameProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Code" Type="varchar" MaxLength="100" />
+          <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Currency" Type="int" Nullable="false" />
+          <Property Name="ShopierProductID" Type="int" />
+          <Property Name="ShopierHiddenID" Type="int" />
+        </EntityType>
+        <EntityType Name="MoolsEpinPreference">
+          <Key>
+            <PropertyRef Name="MoolsEpinPreferenceID" />
+          </Key>
+          <Property Name="MoolsEpinPreferenceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="MoolsEpinUsedLog">
+          <Key>
+            <PropertyRef Name="MoolsEpinUsedLogID" />
+          </Key>
+          <Property Name="MoolsEpinUsedLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MoolsEpinID" Type="int" Nullable="false" />
+          <Property Name="OldEpinBalance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="NewEpinBalance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="PaymentID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NotifyLogs">
+          <Key>
+            <PropertyRef Name="NotifyLogID" />
+          </Key>
+          <Property Name="NotifyLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="From" Type="varchar" MaxLength="255" />
+          <Property Name="Content" Type="text" />
+          <Property Name="IpAddress" Type="varchar" MaxLength="15" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentCurrency">
+          <Key>
+            <PropertyRef Name="PaymentCurrencyID" />
+          </Key>
+          <Property Name="PaymentCurrencyID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="LinkID" Type="int" Nullable="false" />
+          <Property Name="MethodID" Type="int" Nullable="false" />
+          <Property Name="PayerName" Type="varchar" MaxLength="100" />
+          <Property Name="Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Commission" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ProcessDate" Type="datetime" />
+          <Property Name="Message" Type="varchar" MaxLength="255" />
+          <Property Name="ApiCode" Type="varchar" MaxLength="255" />
+          <Property Name="IsSend" Type="bit" Nullable="false" />
+          <Property Name="SendDate" Type="datetime" />
+          <Property Name="IsCancelled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentStatus">
+          <Key>
+            <PropertyRef Name="PaymentStatusID" />
+          </Key>
+          <Property Name="PaymentStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PaymentType">
+          <Key>
+            <PropertyRef Name="PaymentTypeID" />
+          </Key>
+          <Property Name="PaymentTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Site_ChangePasswordLog">
+          <Key>
+            <PropertyRef Name="ChangePasswordID" />
+          </Key>
+          <Property Name="ChangePasswordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Ip" Type="varchar" MaxLength="15" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Site_ForgotPasswordLog">
+          <Key>
+            <PropertyRef Name="ForgotPasswordID" />
+          </Key>
+          <Property Name="ForgotPasswordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Ip" Type="varchar" MaxLength="15" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Hash" Type="varchar" MaxLength="255" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__AccountTr__Accou__4316F928">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="AccountTransaction" Type="Self.AccountTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="AccountTransaction">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AccountTr__Payme__440B1D61">
+          <End Role="Payments" Type="Self.Payments" Multiplicity="1" />
+          <End Role="AccountTransaction" Type="Self.AccountTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="AccountTransaction">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ErrorLog__Accoun__44FF419A">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1" />
+          <End Role="ErrorLog" Type="Self.ErrorLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="ErrorLog">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ErrorLog__Paymen__45F365D3">
+          <End Role="Payments" Type="Self.Payments" Multiplicity="0..1" />
+          <End Role="ErrorLog" Type="Self.ErrorLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="ErrorLog">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Links__AccountID__46E78A0C">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="Links" Type="Self.Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Links__Currency__49C3F6B7">
+          <End Role="PaymentCurrency" Type="Self.PaymentCurrency" Multiplicity="1" />
+          <End Role="Links" Type="Self.Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCurrency">
+              <PropertyRef Name="PaymentCurrencyID" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="Currency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Links__PaymentID__47DBAE45">
+          <End Role="Payments" Type="Self.Payments" Multiplicity="0..1" />
+          <End Role="Links" Type="Self.Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LoginLog__Accoun__4AB81AF0">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="LoginLog" Type="Self.LoginLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="LoginLog">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MethodCom__Accou__4BAC3F29">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="MethodCommissionTree" Type="Self.MethodCommissionTree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MethodCommissionTree">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MethodCom__Metho__4CA06362">
+          <End Role="Methods" Type="Self.Methods" Multiplicity="1" />
+          <End Role="MethodCommissionTree" Type="Self.MethodCommissionTree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Methods">
+              <PropertyRef Name="MethodID" />
+            </Principal>
+            <Dependent Role="MethodCommissionTree">
+              <PropertyRef Name="MethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MethodPre__Accou__4E88ABD4">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="MethodPreference" Type="Self.MethodPreference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MethodPreference">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MethodPre__Metho__4F7CD00D">
+          <End Role="Methods" Type="Self.Methods" Multiplicity="1" />
+          <End Role="MethodPreference" Type="Self.MethodPreference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Methods">
+              <PropertyRef Name="MethodID" />
+            </Principal>
+            <Dependent Role="MethodPreference">
+              <PropertyRef Name="MethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Methods__Currenc__52593CB8">
+          <End Role="PaymentCurrency" Type="Self.PaymentCurrency" Multiplicity="1" />
+          <End Role="Methods" Type="Self.Methods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCurrency">
+              <PropertyRef Name="PaymentCurrencyID" />
+            </Principal>
+            <Dependent Role="Methods">
+              <PropertyRef Name="Currency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Methods__MainMet__6B24EA82">
+          <End Role="Methods" Type="Self.Methods" Multiplicity="0..1" />
+          <End Role="Methods1" Type="Self.Methods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Methods">
+              <PropertyRef Name="MethodID" />
+            </Principal>
+            <Dependent Role="Methods1">
+              <PropertyRef Name="MainMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Accou__59FA5E80">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="MoolsEpinGameProducts" Type="Self.MoolsEpinGameProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MoolsEpinGameProducts">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Accou__5BE2A6F2">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="MoolsEpinPreference" Type="Self.MoolsEpinPreference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MoolsEpinPreference">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Creat__68487DD7">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="MoolsEpin" Type="Self.MoolsEpin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MoolsEpin">
+              <PropertyRef Name="CreatedAccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Curre__5AEE82B9">
+          <End Role="PaymentCurrency" Type="Self.PaymentCurrency" Multiplicity="1" />
+          <End Role="MoolsEpinGameProducts" Type="Self.MoolsEpinGameProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCurrency">
+              <PropertyRef Name="PaymentCurrencyID" />
+            </Principal>
+            <Dependent Role="MoolsEpinGameProducts">
+              <PropertyRef Name="Currency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Curre__66603565">
+          <End Role="PaymentCurrency" Type="Self.PaymentCurrency" Multiplicity="1" />
+          <End Role="MoolsEpin" Type="Self.MoolsEpin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCurrency">
+              <PropertyRef Name="PaymentCurrencyID" />
+            </Principal>
+            <Dependent Role="MoolsEpin">
+              <PropertyRef Name="Currency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Deale__656C112C">
+          <End Role="MoolsEpinDealer" Type="Self.MoolsEpinDealer" Multiplicity="0..1" />
+          <End Role="MoolsEpin" Type="Self.MoolsEpin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MoolsEpinDealer">
+              <PropertyRef Name="MoolsEpinDealerID" />
+            </Principal>
+            <Dependent Role="MoolsEpin">
+              <PropertyRef Name="Dealer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__GameP__6754599E">
+          <End Role="MoolsEpinGameProducts" Type="Self.MoolsEpinGameProducts" Multiplicity="0..1" />
+          <End Role="MoolsEpin" Type="Self.MoolsEpin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MoolsEpinGameProducts">
+              <PropertyRef Name="MoolsEpinGameProductID" />
+            </Principal>
+            <Dependent Role="MoolsEpin">
+              <PropertyRef Name="GameProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Mools__571DF1D5">
+          <End Role="MoolsEpin" Type="Self.MoolsEpin" Multiplicity="1" />
+          <End Role="MoolsEpinUsedLog" Type="Self.MoolsEpinUsedLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MoolsEpin">
+              <PropertyRef Name="MoolsEpinID" />
+            </Principal>
+            <Dependent Role="MoolsEpinUsedLog">
+              <PropertyRef Name="MoolsEpinID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Payme__5812160E">
+          <End Role="Payments" Type="Self.Payments" Multiplicity="1" />
+          <End Role="MoolsEpinUsedLog" Type="Self.MoolsEpinUsedLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="MoolsEpinUsedLog">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Accoun__60A75C0F">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__LinkID__619B8048">
+          <End Role="Links" Type="Self.Links" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Links">
+              <PropertyRef Name="LinkID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="LinkID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Method__628FA481">
+          <End Role="Methods" Type="Self.Methods" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Methods">
+              <PropertyRef Name="MethodID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="MethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Status__6E01572D">
+          <End Role="PaymentStatus" Type="Self.PaymentStatus" Multiplicity="0..1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentStatus">
+              <PropertyRef Name="PaymentStatusID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Type__5FB337D6">
+          <End Role="PaymentType" Type="Self.PaymentType" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentType">
+              <PropertyRef Name="PaymentTypeID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Site_Chan__Accou__6383C8BA">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="Site_ChangePasswordLog" Type="Self.Site_ChangePasswordLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Site_ChangePasswordLog">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Site_Forg__Accou__6477ECF3">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="Site_ForgotPasswordLog" Type="Self.Site_ForgotPasswordLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Site_ForgotPasswordLog">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MoolsLifeModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountTransaction" EntityType="Self.AccountTransaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginLog" EntityType="Self.LoginLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MethodCommissionTree" EntityType="Self.MethodCommissionTree" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MethodPreference" EntityType="Self.MethodPreference" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Methods" EntityType="Self.Methods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MoolsEpin" EntityType="Self.MoolsEpin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MoolsEpinDealer" EntityType="Self.MoolsEpinDealer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MoolsEpinGameProducts" EntityType="Self.MoolsEpinGameProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MoolsEpinPreference" EntityType="Self.MoolsEpinPreference" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MoolsEpinUsedLog" EntityType="Self.MoolsEpinUsedLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotifyLogs" EntityType="Self.NotifyLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentCurrency" EntityType="Self.PaymentCurrency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentStatus" EntityType="Self.PaymentStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentType" EntityType="Self.PaymentType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site_ChangePasswordLog" EntityType="Self.Site_ChangePasswordLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site_ForgotPasswordLog" EntityType="Self.Site_ForgotPasswordLog" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__AccountTr__Accou__4316F928" Association="Self.FK__AccountTr__Accou__4316F928">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="AccountTransaction" EntitySet="AccountTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AccountTr__Payme__440B1D61" Association="Self.FK__AccountTr__Payme__440B1D61">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="AccountTransaction" EntitySet="AccountTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ErrorLog__Accoun__44FF419A" Association="Self.FK__ErrorLog__Accoun__44FF419A">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="ErrorLog" EntitySet="ErrorLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ErrorLog__Paymen__45F365D3" Association="Self.FK__ErrorLog__Paymen__45F365D3">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="ErrorLog" EntitySet="ErrorLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Links__AccountID__46E78A0C" Association="Self.FK__Links__AccountID__46E78A0C">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Links__Currency__49C3F6B7" Association="Self.FK__Links__Currency__49C3F6B7">
+            <End Role="PaymentCurrency" EntitySet="PaymentCurrency" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Links__PaymentID__47DBAE45" Association="Self.FK__Links__PaymentID__47DBAE45">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LoginLog__Accoun__4AB81AF0" Association="Self.FK__LoginLog__Accoun__4AB81AF0">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="LoginLog" EntitySet="LoginLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MethodCom__Accou__4BAC3F29" Association="Self.FK__MethodCom__Accou__4BAC3F29">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MethodCommissionTree" EntitySet="MethodCommissionTree" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MethodCom__Metho__4CA06362" Association="Self.FK__MethodCom__Metho__4CA06362">
+            <End Role="Methods" EntitySet="Methods" />
+            <End Role="MethodCommissionTree" EntitySet="MethodCommissionTree" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MethodPre__Accou__4E88ABD4" Association="Self.FK__MethodPre__Accou__4E88ABD4">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MethodPreference" EntitySet="MethodPreference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MethodPre__Metho__4F7CD00D" Association="Self.FK__MethodPre__Metho__4F7CD00D">
+            <End Role="Methods" EntitySet="Methods" />
+            <End Role="MethodPreference" EntitySet="MethodPreference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Methods__Currenc__52593CB8" Association="Self.FK__Methods__Currenc__52593CB8">
+            <End Role="PaymentCurrency" EntitySet="PaymentCurrency" />
+            <End Role="Methods" EntitySet="Methods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Methods__MainMet__6B24EA82" Association="Self.FK__Methods__MainMet__6B24EA82">
+            <End Role="Methods" EntitySet="Methods" />
+            <End Role="Methods1" EntitySet="Methods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Accou__59FA5E80" Association="Self.FK__MoolsEpin__Accou__59FA5E80">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MoolsEpinGameProducts" EntitySet="MoolsEpinGameProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Accou__5BE2A6F2" Association="Self.FK__MoolsEpin__Accou__5BE2A6F2">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MoolsEpinPreference" EntitySet="MoolsEpinPreference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Creat__68487DD7" Association="Self.FK__MoolsEpin__Creat__68487DD7">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Curre__5AEE82B9" Association="Self.FK__MoolsEpin__Curre__5AEE82B9">
+            <End Role="PaymentCurrency" EntitySet="PaymentCurrency" />
+            <End Role="MoolsEpinGameProducts" EntitySet="MoolsEpinGameProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Curre__66603565" Association="Self.FK__MoolsEpin__Curre__66603565">
+            <End Role="PaymentCurrency" EntitySet="PaymentCurrency" />
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Deale__656C112C" Association="Self.FK__MoolsEpin__Deale__656C112C">
+            <End Role="MoolsEpinDealer" EntitySet="MoolsEpinDealer" />
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__GameP__6754599E" Association="Self.FK__MoolsEpin__GameP__6754599E">
+            <End Role="MoolsEpinGameProducts" EntitySet="MoolsEpinGameProducts" />
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Mools__571DF1D5" Association="Self.FK__MoolsEpin__Mools__571DF1D5">
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+            <End Role="MoolsEpinUsedLog" EntitySet="MoolsEpinUsedLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Payme__5812160E" Association="Self.FK__MoolsEpin__Payme__5812160E">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="MoolsEpinUsedLog" EntitySet="MoolsEpinUsedLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Accoun__60A75C0F" Association="Self.FK__Payments__Accoun__60A75C0F">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__LinkID__619B8048" Association="Self.FK__Payments__LinkID__619B8048">
+            <End Role="Links" EntitySet="Links" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Method__628FA481" Association="Self.FK__Payments__Method__628FA481">
+            <End Role="Methods" EntitySet="Methods" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Status__6E01572D" Association="Self.FK__Payments__Status__6E01572D">
+            <End Role="PaymentStatus" EntitySet="PaymentStatus" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Type__5FB337D6" Association="Self.FK__Payments__Type__5FB337D6">
+            <End Role="PaymentType" EntitySet="PaymentType" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Site_Chan__Accou__6383C8BA" Association="Self.FK__Site_Chan__Accou__6383C8BA">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Site_ChangePasswordLog" EntitySet="Site_ChangePasswordLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Site_Forg__Accou__6477ECF3" Association="Self.FK__Site_Forg__Accou__6477ECF3">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Site_ForgotPasswordLog" EntitySet="Site_ForgotPasswordLog" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MoolsLifeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MoolsLifeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="MoolsLifeModel.Accounts" />
+          <EntitySet Name="AccountTransaction" EntityType="MoolsLifeModel.AccountTransaction" />
+          <EntitySet Name="Links" EntityType="MoolsLifeModel.Links" />
+          <EntitySet Name="LoginLog" EntityType="MoolsLifeModel.LoginLog" />
+          <EntitySet Name="MethodCommissionTree" EntityType="MoolsLifeModel.MethodCommissionTree" />
+          <EntitySet Name="MethodPreference" EntityType="MoolsLifeModel.MethodPreference" />
+          <EntitySet Name="Methods" EntityType="MoolsLifeModel.Methods" />
+          <EntitySet Name="MoolsEpin" EntityType="MoolsLifeModel.MoolsEpin" />
+          <EntitySet Name="MoolsEpinDealer" EntityType="MoolsLifeModel.MoolsEpinDealer" />
+          <EntitySet Name="MoolsEpinPreference" EntityType="MoolsLifeModel.MoolsEpinPreference" />
+          <EntitySet Name="MoolsEpinUsedLog" EntityType="MoolsLifeModel.MoolsEpinUsedLog" />
+          <EntitySet Name="NotifyLogs" EntityType="MoolsLifeModel.NotifyLogs" />
+          <EntitySet Name="PaymentCurrency" EntityType="MoolsLifeModel.PaymentCurrency" />
+          <EntitySet Name="Payments" EntityType="MoolsLifeModel.Payments" />
+          <EntitySet Name="PaymentStatus" EntityType="MoolsLifeModel.PaymentStatus" />
+          <EntitySet Name="PaymentType" EntityType="MoolsLifeModel.PaymentType" />
+          <EntitySet Name="Site_ChangePasswordLog" EntityType="MoolsLifeModel.Site_ChangePasswordLog" />
+          <EntitySet Name="Site_ForgotPasswordLog" EntityType="MoolsLifeModel.Site_ForgotPasswordLog" />
+          <AssociationSet Name="FK__AccountTr__Accou__4316F928" Association="MoolsLifeModel.FK__AccountTr__Accou__4316F928">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="AccountTransaction" EntitySet="AccountTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Links__AccountID__46E78A0C" Association="MoolsLifeModel.FK__Links__AccountID__46E78A0C">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LoginLog__Accoun__4AB81AF0" Association="MoolsLifeModel.FK__LoginLog__Accoun__4AB81AF0">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="LoginLog" EntitySet="LoginLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MethodCom__Accou__4BAC3F29" Association="MoolsLifeModel.FK__MethodCom__Accou__4BAC3F29">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MethodCommissionTree" EntitySet="MethodCommissionTree" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MethodPre__Accou__4E88ABD4" Association="MoolsLifeModel.FK__MethodPre__Accou__4E88ABD4">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MethodPreference" EntitySet="MethodPreference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Accou__5BE2A6F2" Association="MoolsLifeModel.FK__MoolsEpin__Accou__5BE2A6F2">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MoolsEpinPreference" EntitySet="MoolsEpinPreference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Creat__68487DD7" Association="MoolsLifeModel.FK__MoolsEpin__Creat__68487DD7">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Accoun__60A75C0F" Association="MoolsLifeModel.FK__Payments__Accoun__60A75C0F">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Site_Chan__Accou__6383C8BA" Association="MoolsLifeModel.FK__Site_Chan__Accou__6383C8BA">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Site_ChangePasswordLog" EntitySet="Site_ChangePasswordLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Site_Forg__Accou__6477ECF3" Association="MoolsLifeModel.FK__Site_Forg__Accou__6477ECF3">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Site_ForgotPasswordLog" EntitySet="Site_ForgotPasswordLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AccountTr__Payme__440B1D61" Association="MoolsLifeModel.FK__AccountTr__Payme__440B1D61">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="AccountTransaction" EntitySet="AccountTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Links__Currency__49C3F6B7" Association="MoolsLifeModel.FK__Links__Currency__49C3F6B7">
+            <End Role="PaymentCurrency" EntitySet="PaymentCurrency" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Links__PaymentID__47DBAE45" Association="MoolsLifeModel.FK__Links__PaymentID__47DBAE45">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__LinkID__619B8048" Association="MoolsLifeModel.FK__Payments__LinkID__619B8048">
+            <End Role="Links" EntitySet="Links" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MethodCom__Metho__4CA06362" Association="MoolsLifeModel.FK__MethodCom__Metho__4CA06362">
+            <End Role="Methods" EntitySet="Methods" />
+            <End Role="MethodCommissionTree" EntitySet="MethodCommissionTree" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MethodPre__Metho__4F7CD00D" Association="MoolsLifeModel.FK__MethodPre__Metho__4F7CD00D">
+            <End Role="Methods" EntitySet="Methods" />
+            <End Role="MethodPreference" EntitySet="MethodPreference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Methods__Currenc__52593CB8" Association="MoolsLifeModel.FK__Methods__Currenc__52593CB8">
+            <End Role="PaymentCurrency" EntitySet="PaymentCurrency" />
+            <End Role="Methods" EntitySet="Methods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Methods__MainMet__6B24EA82" Association="MoolsLifeModel.FK__Methods__MainMet__6B24EA82">
+            <End Role="Methods" EntitySet="Methods" />
+            <End Role="Methods1" EntitySet="Methods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Method__628FA481" Association="MoolsLifeModel.FK__Payments__Method__628FA481">
+            <End Role="Methods" EntitySet="Methods" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Curre__66603565" Association="MoolsLifeModel.FK__MoolsEpin__Curre__66603565">
+            <End Role="PaymentCurrency" EntitySet="PaymentCurrency" />
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Deale__656C112C" Association="MoolsLifeModel.FK__MoolsEpin__Deale__656C112C">
+            <End Role="MoolsEpinDealer" EntitySet="MoolsEpinDealer" />
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Mools__571DF1D5" Association="MoolsLifeModel.FK__MoolsEpin__Mools__571DF1D5">
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+            <End Role="MoolsEpinUsedLog" EntitySet="MoolsEpinUsedLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Payme__5812160E" Association="MoolsLifeModel.FK__MoolsEpin__Payme__5812160E">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="MoolsEpinUsedLog" EntitySet="MoolsEpinUsedLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Status__6E01572D" Association="MoolsLifeModel.FK__Payments__Status__6E01572D">
+            <End Role="PaymentStatus" EntitySet="PaymentStatus" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Type__5FB337D6" Association="MoolsLifeModel.FK__Payments__Type__5FB337D6">
+            <End Role="PaymentType" EntitySet="PaymentType" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <EntitySet Name="ErrorLog" EntityType="MoolsLifeModel.ErrorLog" />
+          <AssociationSet Name="FK__ErrorLog__Accoun__44FF419A" Association="MoolsLifeModel.FK__ErrorLog__Accoun__44FF419A">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="ErrorLog" EntitySet="ErrorLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ErrorLog__Paymen__45F365D3" Association="MoolsLifeModel.FK__ErrorLog__Paymen__45F365D3">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="ErrorLog" EntitySet="ErrorLog" />
+          </AssociationSet>
+          <EntitySet Name="MoolsEpinGameProducts" EntityType="MoolsLifeModel.MoolsEpinGameProducts" />
+          <AssociationSet Name="FK__MoolsEpin__Accou__59FA5E80" Association="MoolsLifeModel.FK__MoolsEpin__Accou__59FA5E80">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MoolsEpinGameProducts" EntitySet="MoolsEpinGameProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__GameP__6754599E" Association="MoolsLifeModel.FK__MoolsEpin__GameP__6754599E">
+            <End Role="MoolsEpinGameProducts" EntitySet="MoolsEpinGameProducts" />
+            <End Role="MoolsEpin" EntitySet="MoolsEpin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MoolsEpin__Curre__5AEE82B9" Association="MoolsLifeModel.FK__MoolsEpin__Curre__5AEE82B9">
+            <End Role="PaymentCurrency" EntitySet="PaymentCurrency" />
+            <End Role="MoolsEpinGameProducts" EntitySet="MoolsEpinGameProducts" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="AccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="UsableBalance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="DealerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NotifyUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Discount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ReturnUrlSuccess" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ReturnUrlFailed" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LogoImageUrl_" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentCancelRedirectUrl_" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AccountTransaction" Relationship="MoolsLifeModel.FK__AccountTr__Accou__4316F928" FromRole="Accounts" ToRole="AccountTransaction" />
+          <NavigationProperty Name="Links" Relationship="MoolsLifeModel.FK__Links__AccountID__46E78A0C" FromRole="Accounts" ToRole="Links" />
+          <NavigationProperty Name="LoginLog" Relationship="MoolsLifeModel.FK__LoginLog__Accoun__4AB81AF0" FromRole="Accounts" ToRole="LoginLog" />
+          <NavigationProperty Name="MethodCommissionTree" Relationship="MoolsLifeModel.FK__MethodCom__Accou__4BAC3F29" FromRole="Accounts" ToRole="MethodCommissionTree" />
+          <NavigationProperty Name="MethodPreference" Relationship="MoolsLifeModel.FK__MethodPre__Accou__4E88ABD4" FromRole="Accounts" ToRole="MethodPreference" />
+          <NavigationProperty Name="MoolsEpinPreference" Relationship="MoolsLifeModel.FK__MoolsEpin__Accou__5BE2A6F2" FromRole="Accounts" ToRole="MoolsEpinPreference" />
+          <NavigationProperty Name="MoolsEpin" Relationship="MoolsLifeModel.FK__MoolsEpin__Creat__68487DD7" FromRole="Accounts" ToRole="MoolsEpin" />
+          <NavigationProperty Name="Payments" Relationship="MoolsLifeModel.FK__Payments__Accoun__60A75C0F" FromRole="Accounts" ToRole="Payments" />
+          <NavigationProperty Name="Site_ChangePasswordLog" Relationship="MoolsLifeModel.FK__Site_Chan__Accou__6383C8BA" FromRole="Accounts" ToRole="Site_ChangePasswordLog" />
+          <NavigationProperty Name="Site_ForgotPasswordLog" Relationship="MoolsLifeModel.FK__Site_Forg__Accou__6477ECF3" FromRole="Accounts" ToRole="Site_ForgotPasswordLog" />
+          <NavigationProperty Name="ErrorLog" Relationship="MoolsLifeModel.FK__ErrorLog__Accoun__44FF419A" FromRole="Accounts" ToRole="ErrorLog" />
+          <NavigationProperty Name="MoolsEpinGameProducts" Relationship="MoolsLifeModel.FK__MoolsEpin__Accou__59FA5E80" FromRole="Accounts" ToRole="MoolsEpinGameProducts" />
+        </EntityType>
+        <EntityType Name="AccountTransaction">
+          <Key>
+            <PropertyRef Name="AccountTransactionID" />
+          </Key>
+          <Property Name="AccountTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="PaymentID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OldBalance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="NewBalance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Usable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__AccountTr__Accou__4316F928" FromRole="AccountTransaction" ToRole="Accounts" />
+          <NavigationProperty Name="Payments" Relationship="MoolsLifeModel.FK__AccountTr__Payme__440B1D61" FromRole="AccountTransaction" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="LinkID" />
+          </Key>
+          <Property Name="LinkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="Token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Currency" Type="Int32" Nullable="false" />
+          <Property Name="IpAddress" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="OrderID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="product_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="product_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsDead" Type="Boolean" Nullable="false" />
+          <Property Name="PaymentID" Type="Int32" />
+          <Property Name="customer_Identity" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="customer_Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="customer_NameSurname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="customer_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="customer_PhoneCountryCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="product_ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__Links__AccountID__46E78A0C" FromRole="Links" ToRole="Accounts" />
+          <NavigationProperty Name="PaymentCurrency" Relationship="MoolsLifeModel.FK__Links__Currency__49C3F6B7" FromRole="Links" ToRole="PaymentCurrency" />
+          <NavigationProperty Name="Payments" Relationship="MoolsLifeModel.FK__Links__PaymentID__47DBAE45" FromRole="Links" ToRole="Payments" />
+          <NavigationProperty Name="Payments1" Relationship="MoolsLifeModel.FK__Payments__LinkID__619B8048" FromRole="Links" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="LoginLog">
+          <Key>
+            <PropertyRef Name="LoginID" />
+          </Key>
+          <Property Name="LoginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="Ip" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SessionID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__LoginLog__Accoun__4AB81AF0" FromRole="LoginLog" ToRole="Accounts" />
+          <Property Name="Balance1" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Balance2" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="MethodCommissionTree">
+          <Key>
+            <PropertyRef Name="MethodCommissionTreeID" />
+          </Key>
+          <Property Name="MethodCommissionTreeID" Type="Int32" Nullable="false" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="MethodID" Type="Int32" Nullable="false" />
+          <Property Name="Commission" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__MethodCom__Accou__4BAC3F29" FromRole="MethodCommissionTree" ToRole="Accounts" />
+          <NavigationProperty Name="Methods" Relationship="MoolsLifeModel.FK__MethodCom__Metho__4CA06362" FromRole="MethodCommissionTree" ToRole="Methods" />
+        </EntityType>
+        <EntityType Name="MethodPreference">
+          <Key>
+            <PropertyRef Name="MethodPreferenceID" />
+          </Key>
+          <Property Name="MethodPreferenceID" Type="Int32" Nullable="false" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="MethodID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__MethodPre__Accou__4E88ABD4" FromRole="MethodPreference" ToRole="Accounts" />
+          <NavigationProperty Name="Methods" Relationship="MoolsLifeModel.FK__MethodPre__Metho__4F7CD00D" FromRole="MethodPreference" ToRole="Methods" />
+        </EntityType>
+        <EntityType Name="Methods">
+          <Key>
+            <PropertyRef Name="MethodID" />
+          </Key>
+          <Property Name="MethodID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AccountHolder" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BranchName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BranchCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IbanCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsAtmActive" Type="Boolean" Nullable="false" />
+          <Property Name="AtmFee" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="AtmDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="Commission" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Currency" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="MainMethodID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MethodCommissionTree" Relationship="MoolsLifeModel.FK__MethodCom__Metho__4CA06362" FromRole="Methods" ToRole="MethodCommissionTree" />
+          <NavigationProperty Name="MethodPreference" Relationship="MoolsLifeModel.FK__MethodPre__Metho__4F7CD00D" FromRole="Methods" ToRole="MethodPreference" />
+          <NavigationProperty Name="PaymentCurrency" Relationship="MoolsLifeModel.FK__Methods__Currenc__52593CB8" FromRole="Methods" ToRole="PaymentCurrency" />
+          <NavigationProperty Name="Methods1" Relationship="MoolsLifeModel.FK__Methods__MainMet__6B24EA82" FromRole="Methods" ToRole="Methods1" />
+          <NavigationProperty Name="Methods2" Relationship="MoolsLifeModel.FK__Methods__MainMet__6B24EA82" FromRole="Methods1" ToRole="Methods" />
+          <NavigationProperty Name="Payments" Relationship="MoolsLifeModel.FK__Payments__Method__628FA481" FromRole="Methods" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="MoolsEpin">
+          <Key>
+            <PropertyRef Name="MoolsEpinID" />
+          </Key>
+          <Property Name="MoolsEpinID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Currency" Type="Int32" Nullable="false" />
+          <Property Name="GameProductID" Type="Int32" />
+          <Property Name="CreatedAccountID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsBonus" Type="Boolean" Nullable="false" />
+          <Property Name="Dealer" Type="Int32" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__MoolsEpin__Creat__68487DD7" FromRole="MoolsEpin" ToRole="Accounts" />
+          <NavigationProperty Name="PaymentCurrency" Relationship="MoolsLifeModel.FK__MoolsEpin__Curre__66603565" FromRole="MoolsEpin" ToRole="PaymentCurrency" />
+          <NavigationProperty Name="MoolsEpinDealer" Relationship="MoolsLifeModel.FK__MoolsEpin__Deale__656C112C" FromRole="MoolsEpin" ToRole="MoolsEpinDealer" />
+          <NavigationProperty Name="MoolsEpinUsedLog" Relationship="MoolsLifeModel.FK__MoolsEpin__Mools__571DF1D5" FromRole="MoolsEpin" ToRole="MoolsEpinUsedLog" />
+          <NavigationProperty Name="MoolsEpinGameProducts" Relationship="MoolsLifeModel.FK__MoolsEpin__GameP__6754599E" FromRole="MoolsEpin" ToRole="MoolsEpinGameProducts" />
+        </EntityType>
+        <EntityType Name="MoolsEpinDealer">
+          <Key>
+            <PropertyRef Name="MoolsEpinDealerID" />
+          </Key>
+          <Property Name="MoolsEpinDealerID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MoolsEpin" Relationship="MoolsLifeModel.FK__MoolsEpin__Deale__656C112C" FromRole="MoolsEpinDealer" ToRole="MoolsEpin" />
+        </EntityType>
+        <EntityType Name="MoolsEpinPreference">
+          <Key>
+            <PropertyRef Name="MoolsEpinPreferenceID" />
+          </Key>
+          <Property Name="MoolsEpinPreferenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__MoolsEpin__Accou__5BE2A6F2" FromRole="MoolsEpinPreference" ToRole="Accounts" />
+        </EntityType>
+        <EntityType Name="MoolsEpinUsedLog">
+          <Key>
+            <PropertyRef Name="MoolsEpinUsedLogID" />
+          </Key>
+          <Property Name="MoolsEpinUsedLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MoolsEpinID" Type="Int32" Nullable="false" />
+          <Property Name="OldEpinBalance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="NewEpinBalance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PaymentID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MoolsEpin" Relationship="MoolsLifeModel.FK__MoolsEpin__Mools__571DF1D5" FromRole="MoolsEpinUsedLog" ToRole="MoolsEpin" />
+          <NavigationProperty Name="Payments" Relationship="MoolsLifeModel.FK__MoolsEpin__Payme__5812160E" FromRole="MoolsEpinUsedLog" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="NotifyLogs">
+          <Key>
+            <PropertyRef Name="NotifyLogID" />
+          </Key>
+          <Property Name="NotifyLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="From" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IpAddress" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="PaymentCurrency">
+          <Key>
+            <PropertyRef Name="PaymentCurrencyID" />
+          </Key>
+          <Property Name="PaymentCurrencyID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Links" Relationship="MoolsLifeModel.FK__Links__Currency__49C3F6B7" FromRole="PaymentCurrency" ToRole="Links" />
+          <NavigationProperty Name="Methods" Relationship="MoolsLifeModel.FK__Methods__Currenc__52593CB8" FromRole="PaymentCurrency" ToRole="Methods" />
+          <NavigationProperty Name="MoolsEpin" Relationship="MoolsLifeModel.FK__MoolsEpin__Curre__66603565" FromRole="PaymentCurrency" ToRole="MoolsEpin" />
+          <NavigationProperty Name="MoolsEpinGameProducts" Relationship="MoolsLifeModel.FK__MoolsEpin__Curre__5AEE82B9" FromRole="PaymentCurrency" ToRole="MoolsEpinGameProducts" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="LinkID" Type="Int32" Nullable="false" />
+          <Property Name="MethodID" Type="Int32" Nullable="false" />
+          <Property Name="PayerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Commission" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+          <Property Name="Message" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ApiCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsSend" Type="Boolean" Nullable="false" />
+          <Property Name="SendDate" Type="DateTime" Precision="3" />
+          <Property Name="IsCancelled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__Payments__Accoun__60A75C0F" FromRole="Payments" ToRole="Accounts" />
+          <NavigationProperty Name="AccountTransaction" Relationship="MoolsLifeModel.FK__AccountTr__Payme__440B1D61" FromRole="Payments" ToRole="AccountTransaction" />
+          <NavigationProperty Name="Links" Relationship="MoolsLifeModel.FK__Links__PaymentID__47DBAE45" FromRole="Payments" ToRole="Links" />
+          <NavigationProperty Name="Links1" Relationship="MoolsLifeModel.FK__Payments__LinkID__619B8048" FromRole="Payments" ToRole="Links" />
+          <NavigationProperty Name="Methods" Relationship="MoolsLifeModel.FK__Payments__Method__628FA481" FromRole="Payments" ToRole="Methods" />
+          <NavigationProperty Name="MoolsEpinUsedLog" Relationship="MoolsLifeModel.FK__MoolsEpin__Payme__5812160E" FromRole="Payments" ToRole="MoolsEpinUsedLog" />
+          <NavigationProperty Name="PaymentStatus" Relationship="MoolsLifeModel.FK__Payments__Status__6E01572D" FromRole="Payments" ToRole="PaymentStatus" />
+          <NavigationProperty Name="PaymentType" Relationship="MoolsLifeModel.FK__Payments__Type__5FB337D6" FromRole="Payments" ToRole="PaymentType" />
+          <NavigationProperty Name="ErrorLog" Relationship="MoolsLifeModel.FK__ErrorLog__Paymen__45F365D3" FromRole="Payments" ToRole="ErrorLog" />
+        </EntityType>
+        <EntityType Name="PaymentStatus">
+          <Key>
+            <PropertyRef Name="PaymentStatusID" />
+          </Key>
+          <Property Name="PaymentStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Payments" Relationship="MoolsLifeModel.FK__Payments__Status__6E01572D" FromRole="PaymentStatus" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="PaymentType">
+          <Key>
+            <PropertyRef Name="PaymentTypeID" />
+          </Key>
+          <Property Name="PaymentTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Payments" Relationship="MoolsLifeModel.FK__Payments__Type__5FB337D6" FromRole="PaymentType" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="Site_ChangePasswordLog">
+          <Key>
+            <PropertyRef Name="ChangePasswordID" />
+          </Key>
+          <Property Name="ChangePasswordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__Site_Chan__Accou__6383C8BA" FromRole="Site_ChangePasswordLog" ToRole="Accounts" />
+        </EntityType>
+        <EntityType Name="Site_ForgotPasswordLog">
+          <Key>
+            <PropertyRef Name="ForgotPasswordID" />
+          </Key>
+          <Property Name="ForgotPasswordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Hash" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__Site_Forg__Accou__6477ECF3" FromRole="Site_ForgotPasswordLog" ToRole="Accounts" />
+        </EntityType>
+        <Association Name="FK__AccountTr__Accou__4316F928">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.AccountTransaction" Role="AccountTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="AccountTransaction">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Links__AccountID__46E78A0C">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.Links" Role="Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LoginLog__Accoun__4AB81AF0">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.LoginLog" Role="LoginLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="LoginLog">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MethodCom__Accou__4BAC3F29">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MethodCommissionTree" Role="MethodCommissionTree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MethodCommissionTree">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MethodPre__Accou__4E88ABD4">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MethodPreference" Role="MethodPreference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MethodPreference">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Accou__5BE2A6F2">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MoolsEpinPreference" Role="MoolsEpinPreference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MoolsEpinPreference">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Creat__68487DD7">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MoolsEpin" Role="MoolsEpin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MoolsEpin">
+              <PropertyRef Name="CreatedAccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Accoun__60A75C0F">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Site_Chan__Accou__6383C8BA">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.Site_ChangePasswordLog" Role="Site_ChangePasswordLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Site_ChangePasswordLog">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Site_Forg__Accou__6477ECF3">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.Site_ForgotPasswordLog" Role="Site_ForgotPasswordLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Site_ForgotPasswordLog">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AccountTr__Payme__440B1D61">
+          <End Type="MoolsLifeModel.Payments" Role="Payments" Multiplicity="1" />
+          <End Type="MoolsLifeModel.AccountTransaction" Role="AccountTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="AccountTransaction">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Links__Currency__49C3F6B7">
+          <End Type="MoolsLifeModel.PaymentCurrency" Role="PaymentCurrency" Multiplicity="1" />
+          <End Type="MoolsLifeModel.Links" Role="Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCurrency">
+              <PropertyRef Name="PaymentCurrencyID" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="Currency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Links__PaymentID__47DBAE45">
+          <End Type="MoolsLifeModel.Payments" Role="Payments" Multiplicity="0..1" />
+          <End Type="MoolsLifeModel.Links" Role="Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__LinkID__619B8048">
+          <End Type="MoolsLifeModel.Links" Role="Links" Multiplicity="1" />
+          <End Type="MoolsLifeModel.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Links">
+              <PropertyRef Name="LinkID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="LinkID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MethodCom__Metho__4CA06362">
+          <End Type="MoolsLifeModel.Methods" Role="Methods" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MethodCommissionTree" Role="MethodCommissionTree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Methods">
+              <PropertyRef Name="MethodID" />
+            </Principal>
+            <Dependent Role="MethodCommissionTree">
+              <PropertyRef Name="MethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MethodPre__Metho__4F7CD00D">
+          <End Type="MoolsLifeModel.Methods" Role="Methods" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MethodPreference" Role="MethodPreference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Methods">
+              <PropertyRef Name="MethodID" />
+            </Principal>
+            <Dependent Role="MethodPreference">
+              <PropertyRef Name="MethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Methods__Currenc__52593CB8">
+          <End Type="MoolsLifeModel.PaymentCurrency" Role="PaymentCurrency" Multiplicity="1" />
+          <End Type="MoolsLifeModel.Methods" Role="Methods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCurrency">
+              <PropertyRef Name="PaymentCurrencyID" />
+            </Principal>
+            <Dependent Role="Methods">
+              <PropertyRef Name="Currency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Methods__MainMet__6B24EA82">
+          <End Type="MoolsLifeModel.Methods" Role="Methods" Multiplicity="0..1" />
+          <End Type="MoolsLifeModel.Methods" Role="Methods1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Methods">
+              <PropertyRef Name="MethodID" />
+            </Principal>
+            <Dependent Role="Methods1">
+              <PropertyRef Name="MainMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Method__628FA481">
+          <End Type="MoolsLifeModel.Methods" Role="Methods" Multiplicity="1" />
+          <End Type="MoolsLifeModel.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Methods">
+              <PropertyRef Name="MethodID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="MethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Curre__66603565">
+          <End Type="MoolsLifeModel.PaymentCurrency" Role="PaymentCurrency" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MoolsEpin" Role="MoolsEpin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCurrency">
+              <PropertyRef Name="PaymentCurrencyID" />
+            </Principal>
+            <Dependent Role="MoolsEpin">
+              <PropertyRef Name="Currency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Deale__656C112C">
+          <End Type="MoolsLifeModel.MoolsEpinDealer" Role="MoolsEpinDealer" Multiplicity="0..1" />
+          <End Type="MoolsLifeModel.MoolsEpin" Role="MoolsEpin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MoolsEpinDealer">
+              <PropertyRef Name="MoolsEpinDealerID" />
+            </Principal>
+            <Dependent Role="MoolsEpin">
+              <PropertyRef Name="Dealer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Mools__571DF1D5">
+          <End Type="MoolsLifeModel.MoolsEpin" Role="MoolsEpin" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MoolsEpinUsedLog" Role="MoolsEpinUsedLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MoolsEpin">
+              <PropertyRef Name="MoolsEpinID" />
+            </Principal>
+            <Dependent Role="MoolsEpinUsedLog">
+              <PropertyRef Name="MoolsEpinID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Payme__5812160E">
+          <End Type="MoolsLifeModel.Payments" Role="Payments" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MoolsEpinUsedLog" Role="MoolsEpinUsedLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="MoolsEpinUsedLog">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Status__6E01572D">
+          <End Type="MoolsLifeModel.PaymentStatus" Role="PaymentStatus" Multiplicity="0..1" />
+          <End Type="MoolsLifeModel.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentStatus">
+              <PropertyRef Name="PaymentStatusID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Type__5FB337D6">
+          <End Type="MoolsLifeModel.PaymentType" Role="PaymentType" Multiplicity="1" />
+          <End Type="MoolsLifeModel.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentType">
+              <PropertyRef Name="PaymentTypeID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorID" />
+          </Key>
+          <Property Name="ErrorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountID" Type="Int32" />
+          <Property Name="PaymentID" Type="Int32" />
+          <Property Name="ErrorCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Message_" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__ErrorLog__Accoun__44FF419A" FromRole="ErrorLog" ToRole="Accounts" />
+          <NavigationProperty Name="Payments" Relationship="MoolsLifeModel.FK__ErrorLog__Paymen__45F365D3" FromRole="ErrorLog" ToRole="Payments" />
+        </EntityType>
+        <Association Name="FK__ErrorLog__Accoun__44FF419A">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="0..1" />
+          <End Type="MoolsLifeModel.ErrorLog" Role="ErrorLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="ErrorLog">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ErrorLog__Paymen__45F365D3">
+          <End Type="MoolsLifeModel.Payments" Role="Payments" Multiplicity="0..1" />
+          <End Type="MoolsLifeModel.ErrorLog" Role="ErrorLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="ErrorLog">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MoolsEpinGameProducts">
+          <Key>
+            <PropertyRef Name="MoolsEpinGameProductID" />
+          </Key>
+          <Property Name="MoolsEpinGameProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Currency" Type="Int32" Nullable="false" />
+          <Property Name="ShopierProductID" Type="Int32" />
+          <Property Name="ShopierHiddenID" Type="Int32" />
+          <NavigationProperty Name="Accounts" Relationship="MoolsLifeModel.FK__MoolsEpin__Accou__59FA5E80" FromRole="MoolsEpinGameProducts" ToRole="Accounts" />
+          <NavigationProperty Name="MoolsEpin" Relationship="MoolsLifeModel.FK__MoolsEpin__GameP__6754599E" FromRole="MoolsEpinGameProducts" ToRole="MoolsEpin" />
+          <NavigationProperty Name="PaymentCurrency" Relationship="MoolsLifeModel.FK__MoolsEpin__Curre__5AEE82B9" FromRole="MoolsEpinGameProducts" ToRole="PaymentCurrency" />
+        </EntityType>
+        <Association Name="FK__MoolsEpin__Accou__59FA5E80">
+          <End Type="MoolsLifeModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MoolsEpinGameProducts" Role="MoolsEpinGameProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="MoolsEpinGameProducts">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__GameP__6754599E">
+          <End Type="MoolsLifeModel.MoolsEpinGameProducts" Role="MoolsEpinGameProducts" Multiplicity="0..1" />
+          <End Type="MoolsLifeModel.MoolsEpin" Role="MoolsEpin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MoolsEpinGameProducts">
+              <PropertyRef Name="MoolsEpinGameProductID" />
+            </Principal>
+            <Dependent Role="MoolsEpin">
+              <PropertyRef Name="GameProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MoolsEpin__Curre__5AEE82B9">
+          <End Type="MoolsLifeModel.PaymentCurrency" Role="PaymentCurrency" Multiplicity="1" />
+          <End Type="MoolsLifeModel.MoolsEpinGameProducts" Role="MoolsEpinGameProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCurrency">
+              <PropertyRef Name="PaymentCurrencyID" />
+            </Principal>
+            <Dependent Role="MoolsEpinGameProducts">
+              <PropertyRef Name="Currency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MoolsLifeModelStoreContainer" CdmEntityContainer="MoolsLifeEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="MoolsLifeModel.Accounts">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="PaymentCancelRedirectUrl_" ColumnName="PaymentCancelRedirectUrl " />
+                <ScalarProperty Name="LogoImageUrl_" ColumnName="LogoImageUrl " />
+                <ScalarProperty Name="ReturnUrlFailed" ColumnName="ReturnUrlFailed" />
+                <ScalarProperty Name="ReturnUrlSuccess" ColumnName="ReturnUrlSuccess" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="NotifyUrl" ColumnName="NotifyUrl" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+                <ScalarProperty Name="UsableBalance" ColumnName="UsableBalance" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountTransaction">
+            <EntityTypeMapping TypeName="MoolsLifeModel.AccountTransaction">
+              <MappingFragment StoreEntitySet="AccountTransaction">
+                <ScalarProperty Name="Usable" ColumnName="Usable" />
+                <ScalarProperty Name="NewBalance" ColumnName="NewBalance" />
+                <ScalarProperty Name="OldBalance" ColumnName="OldBalance" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="AccountTransactionID" ColumnName="AccountTransactionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Links">
+            <EntityTypeMapping TypeName="MoolsLifeModel.Links">
+              <MappingFragment StoreEntitySet="Links">
+                <ScalarProperty Name="product_ImageUrl" ColumnName="product_ImageUrl" />
+                <ScalarProperty Name="customer_PhoneCountryCode" ColumnName="customer_PhoneCountryCode" />
+                <ScalarProperty Name="customer_Email" ColumnName="customer_Email" />
+                <ScalarProperty Name="customer_NameSurname" ColumnName="customer_NameSurname" />
+                <ScalarProperty Name="customer_Phone" ColumnName="customer_Phone" />
+                <ScalarProperty Name="customer_Identity" ColumnName="customer_Identity" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="IsDead" ColumnName="IsDead" />
+                <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+                <ScalarProperty Name="product_Name" ColumnName="product_Name" />
+                <ScalarProperty Name="product_Code" ColumnName="product_Code" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="LinkID" ColumnName="LinkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginLog">
+            <EntityTypeMapping TypeName="MoolsLifeModel.LoginLog">
+              <MappingFragment StoreEntitySet="LoginLog">
+                <ScalarProperty Name="Balance2" ColumnName="Balance2" />
+                <ScalarProperty Name="Balance1" ColumnName="Balance1" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MethodCommissionTree">
+            <EntityTypeMapping TypeName="MoolsLifeModel.MethodCommissionTree">
+              <MappingFragment StoreEntitySet="MethodCommissionTree">
+                <ScalarProperty Name="Commission" ColumnName="Commission" />
+                <ScalarProperty Name="MethodID" ColumnName="MethodID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="MethodCommissionTreeID" ColumnName="MethodCommissionTreeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MethodPreference">
+            <EntityTypeMapping TypeName="MoolsLifeModel.MethodPreference">
+              <MappingFragment StoreEntitySet="MethodPreference">
+                <ScalarProperty Name="MethodID" ColumnName="MethodID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="MethodPreferenceID" ColumnName="MethodPreferenceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Methods">
+            <EntityTypeMapping TypeName="MoolsLifeModel.Methods">
+              <MappingFragment StoreEntitySet="Methods">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MainMethodID" ColumnName="MainMethodID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Commission" ColumnName="Commission" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="AtmDescription" ColumnName="AtmDescription" />
+                <ScalarProperty Name="AtmFee" ColumnName="AtmFee" />
+                <ScalarProperty Name="IsAtmActive" ColumnName="IsAtmActive" />
+                <ScalarProperty Name="IbanCode" ColumnName="IbanCode" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="AccountHolder" ColumnName="AccountHolder" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MethodID" ColumnName="MethodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MoolsEpin">
+            <EntityTypeMapping TypeName="MoolsLifeModel.MoolsEpin">
+              <MappingFragment StoreEntitySet="MoolsEpin">
+                <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+                <ScalarProperty Name="IsBonus" ColumnName="IsBonus" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedAccountID" ColumnName="CreatedAccountID" />
+                <ScalarProperty Name="GameProductID" ColumnName="GameProductID" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="MoolsEpinID" ColumnName="MoolsEpinID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MoolsEpinDealer">
+            <EntityTypeMapping TypeName="MoolsLifeModel.MoolsEpinDealer">
+              <MappingFragment StoreEntitySet="MoolsEpinDealer">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MoolsEpinDealerID" ColumnName="MoolsEpinDealerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MoolsEpinPreference">
+            <EntityTypeMapping TypeName="MoolsLifeModel.MoolsEpinPreference">
+              <MappingFragment StoreEntitySet="MoolsEpinPreference">
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="MoolsEpinPreferenceID" ColumnName="MoolsEpinPreferenceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MoolsEpinUsedLog">
+            <EntityTypeMapping TypeName="MoolsLifeModel.MoolsEpinUsedLog">
+              <MappingFragment StoreEntitySet="MoolsEpinUsedLog">
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="NewEpinBalance" ColumnName="NewEpinBalance" />
+                <ScalarProperty Name="OldEpinBalance" ColumnName="OldEpinBalance" />
+                <ScalarProperty Name="MoolsEpinID" ColumnName="MoolsEpinID" />
+                <ScalarProperty Name="MoolsEpinUsedLogID" ColumnName="MoolsEpinUsedLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotifyLogs">
+            <EntityTypeMapping TypeName="MoolsLifeModel.NotifyLogs">
+              <MappingFragment StoreEntitySet="NotifyLogs">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="NotifyLogID" ColumnName="NotifyLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentCurrency">
+            <EntityTypeMapping TypeName="MoolsLifeModel.PaymentCurrency">
+              <MappingFragment StoreEntitySet="PaymentCurrency">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PaymentCurrencyID" ColumnName="PaymentCurrencyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="MoolsLifeModel.Payments">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="IsCancelled" ColumnName="IsCancelled" />
+                <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+                <ScalarProperty Name="IsSend" ColumnName="IsSend" />
+                <ScalarProperty Name="ApiCode" ColumnName="ApiCode" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Commission" ColumnName="Commission" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PayerName" ColumnName="PayerName" />
+                <ScalarProperty Name="MethodID" ColumnName="MethodID" />
+                <ScalarProperty Name="LinkID" ColumnName="LinkID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentStatus">
+            <EntityTypeMapping TypeName="MoolsLifeModel.PaymentStatus">
+              <MappingFragment StoreEntitySet="PaymentStatus">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PaymentStatusID" ColumnName="PaymentStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentType">
+            <EntityTypeMapping TypeName="MoolsLifeModel.PaymentType">
+              <MappingFragment StoreEntitySet="PaymentType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PaymentTypeID" ColumnName="PaymentTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Site_ChangePasswordLog">
+            <EntityTypeMapping TypeName="MoolsLifeModel.Site_ChangePasswordLog">
+              <MappingFragment StoreEntitySet="Site_ChangePasswordLog">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="ChangePasswordID" ColumnName="ChangePasswordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Site_ForgotPasswordLog">
+            <EntityTypeMapping TypeName="MoolsLifeModel.Site_ForgotPasswordLog">
+              <MappingFragment StoreEntitySet="Site_ForgotPasswordLog">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Hash" ColumnName="Hash" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="ForgotPasswordID" ColumnName="ForgotPasswordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ErrorLog">
+            <EntityTypeMapping TypeName="MoolsLifeModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+                <ScalarProperty Name="Message_" ColumnName="Message " />
+                <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MoolsEpinGameProducts">
+            <EntityTypeMapping TypeName="MoolsLifeModel.MoolsEpinGameProducts">
+              <MappingFragment StoreEntitySet="MoolsEpinGameProducts">
+                <ScalarProperty Name="ShopierHiddenID" ColumnName="ShopierHiddenID" />
+                <ScalarProperty Name="ShopierProductID" ColumnName="ShopierProductID" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="MoolsEpinGameProductID" ColumnName="MoolsEpinGameProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

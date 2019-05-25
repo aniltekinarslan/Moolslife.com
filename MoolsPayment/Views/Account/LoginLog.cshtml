@@ -1,0 +1,107 @@
+﻿@using Resources
+@using MoolsPayment.Controllers
+@model IEnumerable<MoolsPayment.Models.LoginLog>
+
+@{
+    ViewBag.Title = Home.LoginLogs;
+}
+
+
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index","Home")">Panel</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("LoginLog", "Account")">@Home.LoginLogs</a>
+        </li>
+    </ul>
+</div>
+<h3 class="page-title"></h3>
+<!-- END PAGE HEADER-->
+
+
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-comments"></i>@Home.LoginLogs
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="reload" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="remove" data-original-title="" title="">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-scrollable">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            #Id
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ip)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SessionID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var n in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @n.LoginID
+                                </td>
+                                <td>
+                                    @n.Ip
+                                </td>
+                                <td>
+                                    @n.SessionID
+                                </td>
+                                <td>
+                                    @n.Date
+                                </td>
+                                <td>
+                                    @if (n.Status == true)
+                                    {
+                                        <span class="label label-sm label-success">
+                                            @Home.Successful
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-danger">
+                                            @Home.Failed
+                                        </span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- END DASHBOARD STATS -->
+<div class="clearfix"></div>
+

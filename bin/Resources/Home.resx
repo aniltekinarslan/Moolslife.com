@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>Hesap</value>
+  </data>
+  <data name="BuyPremium" xml:space="preserve">
+    <value>Premium Satın Al</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Eposta</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English (EN)</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Sona Erme Tarihi</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP Adresi</value>
+  </data>
+  <data name="MoneyBalance" xml:space="preserve">
+    <value>Para Bakiyesi</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>Hesabım</value>
+  </data>
+  <data name="MyAccountInformation" xml:space="preserve">
+    <value>Hesap Bilgilerim</value>
+  </data>
+  <data name="NotHavePremium" xml:space="preserve">
+    <value>Yüklü Değil</value>
+  </data>
+  <data name="NPoints" xml:space="preserve">
+    <value>NPoint</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Sifre</value>
+  </data>
+  <data name="PendingPayments" xml:space="preserve">
+    <value>Bekleyen Ödemeler</value>
+  </data>
+  <data name="SiteDomain" xml:space="preserve">
+    <value>Zofking.com</value>
+  </data>
+  <data name="SiteName" xml:space="preserve">
+    <value>Zofking</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Toplam</value>
+  </data>
+  <data name="Turkish" xml:space="preserve">
+    <value>Türkçe (TR)</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Kullanıcı Adı</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Hoşgeldiniz</value>
+  </data>
+  <data name="ChangeEmail" xml:space="preserve">
+    <value>Eposta Değiştir</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Şifre Değiştir</value>
+  </data>
+  <data name="ClassChange" xml:space="preserve">
+    <value>Sınıf Değiştirme</value>
+  </data>
+  <data name="GenderChange" xml:space="preserve">
+    <value>Cinsiyet Değiştirme</value>
+  </data>
+  <data name="InGameFeatures" xml:space="preserve">
+    <value>Oyuniçi Özellikler</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Çıkış Yap</value>
+  </data>
+  <data name="MENU_BUY_NPOINTS" xml:space="preserve">
+    <value>NPOINT (KC) SATIN AL</value>
+  </data>
+  <data name="MENU_CLAN_RANKINGS" xml:space="preserve">
+    <value>KLAN SIRALAMASI</value>
+  </data>
+  <data name="MENU_DOWNLOAD" xml:space="preserve">
+    <value>Indir</value>
+  </data>
+  <data name="MENU_GUIDE" xml:space="preserve">
+    <value>Rehber</value>
+  </data>
+  <data name="MENU_HOMEPAGE" xml:space="preserve">
+    <value>Anasayfa</value>
+  </data>
+  <data name="MENU_LOGIN" xml:space="preserve">
+    <value>GİRİŞ YAP</value>
+  </data>
+  <data name="MENU_MONTLY_RANKINGS" xml:space="preserve">
+    <value>AYLIK SIRALAMA</value>
+  </data>
+  <data name="MENU_MYACCOUNT" xml:space="preserve">
+    <value>HESABIM</value>
+  </data>
+  <data name="MENU_OUR_DEALERS" xml:space="preserve">
+    <value>Satış Bayilerimiz</value>
+  </data>
+  <data name="MENU_PRODUCTS_PRICES" xml:space="preserve">
+    <value>Pus Ürünleri ve Fiyatları</value>
+  </data>
+  <data name="MENU_PUS_GUIDE" xml:space="preserve">
+    <value>Pus Rehberi</value>
+  </data>
+  <data name="MENU_RANKINGS" xml:space="preserve">
+    <value>SIRALAMALAR</value>
+  </data>
+  <data name="MENU_REGISTER" xml:space="preserve">
+    <value>Kayit Ol</value>
+  </data>
+  <data name="MENU_SUPPORT" xml:space="preserve">
+    <value>Destek</value>
+  </data>
+  <data name="MENU_EXPLORE" xml:space="preserve">
+    <value>KeŞfet</value>
+  </data>
+  <data name="MENU_USER_RANKINGS" xml:space="preserve">
+    <value>KULLANICI SIRALAMASI</value>
+  </data>
+  <data name="MoneyBalancetoKC" xml:space="preserve">
+    <value>Para Bakiyemi KC'ye Çevir</value>
+  </data>
+  <data name="NationTransfer" xml:space="preserve">
+    <value>Irk Transferi</value>
+  </data>
+  <data name="PaymentHistory" xml:space="preserve">
+    <value>Ödeme Geçmişi</value>
+  </data>
+  <data name="PurchaseHistory" xml:space="preserve">
+    <value>Alışveriş Geçmişi</value>
+  </data>
+  <data name="RechargeNpoints" xml:space="preserve">
+    <value>NPoint (KC) Yükle</value>
+  </data>
+  <data name="ActivatingAccount" xml:space="preserve">
+    <value>Hesap Aktifleştirme</value>
+  </data>
+  <data name="ActivatingAccountUpper" xml:space="preserve">
+    <value>HESAP AKTİFLEŞTİRME</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Fiyat</value>
+  </data>
+  <data name="ChangeNewEmail" xml:space="preserve">
+    <value>Mailimi Değiştir</value>
+  </data>
+  <data name="Character" xml:space="preserve">
+    <value>Karakter</value>
+  </data>
+  <data name="ClanName" xml:space="preserve">
+    <value>Klan Adı</value>
+  </data>
+  <data name="ExtraDownloads" xml:space="preserve">
+    <value>Ekstra İndirmeler</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Şifremi Unuttum</value>
+  </data>
+  <data name="ForgotPasswordUpper" xml:space="preserve">
+    <value>ŞİFREMİ UNUTTUM</value>
+  </data>
+  <data name="GamerName" xml:space="preserve">
+    <value>Oyuncu Adı</value>
+  </data>
+  <data name="ItemName" xml:space="preserve">
+    <value>Eşya Adı</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Giris Yap</value>
+  </data>
+  <data name="LoginUpper" xml:space="preserve">
+    <value>GİRİŞ YAP</value>
+  </data>
+  <data name="NoPurchaseHistory" xml:space="preserve">
+    <value>Alışveriş geçmişinde kayıt bulunamadı.</value>
+  </data>
+  <data name="NotActivatedUserRanks" xml:space="preserve">
+    <value>Kullanıcı sıralaması henüz aktif değildir.</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Puan</value>
+  </data>
+  <data name="PurchaseDate" xml:space="preserve">
+    <value>Satınalma Tarihi</value>
+  </data>
+  <data name="PurchaseHistoryUpper" xml:space="preserve">
+    <value>ALIŞVERİŞ GEÇMİŞİ</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Adet</value>
+  </data>
+  <data name="Rank" xml:space="preserve">
+    <value>Sıralama</value>
+  </data>
+  <data name="RankingUser" xml:space="preserve">
+    <value>Kullanıcı Sıralaması</value>
+  </data>
+  <data name="RankingClan" xml:space="preserve">
+    <value>Klan Sıralaması</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Kayit Ol</value>
+  </data>
+  <data name="ResendActivateEmail" xml:space="preserve">
+    <value>Aktivasyon Mailini Tekrar Gönder</value>
+  </data>
+  <data name="ResendActivateEmailUpper" xml:space="preserve">
+    <value>AKTİVASYON MAİLİNİ TEKRAR GÖNDER</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Şifre Yenileme</value>
+  </data>
+  <data name="ResetPasswordUpper" xml:space="preserve">
+    <value>ŞİFRE YENİLEME</value>
+  </data>
+  <data name="SecretQuestion1" xml:space="preserve">
+    <value>What is your favorite super hero</value>
+  </data>
+  <data name="SecretQuestion2" xml:space="preserve">
+    <value>Who is your favorite cartoon character</value>
+  </data>
+  <data name="SecretQuestion3" xml:space="preserve">
+    <value>What was the name of your first teacher</value>
+  </data>
+  <data name="SecretQuestion4" xml:space="preserve">
+    <value>What is your mothers maiden name</value>
+  </data>
+  <data name="SecretQuestion5" xml:space="preserve">
+    <value>What is the name of your first pet</value>
+  </data>
+  <data name="SendConfirmationEmail" xml:space="preserve">
+    <value>Onaylama Epostası Gönder</value>
+  </data>
+  <data name="SiteNameUpper" xml:space="preserve">
+    <value>ZOFKING</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Boyut</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versiyon</value>
+  </data>
+  <data name="AcceptChangeEmail" xml:space="preserve">
+    <value>Eposta Değiştirmeyi Onaylıyorum</value>
+  </data>
+  <data name="AcceptResetPassword" xml:space="preserve">
+    <value>Şifre Yenilemeyi Onaylıyorum</value>
+  </data>
+  <data name="AcceptValidateAccount" xml:space="preserve">
+    <value>Hesabımı Aktifleştir</value>
+  </data>
+  <data name="CantFindAccount" xml:space="preserve">
+    <value>Hesabınızı bulamadık. Lütfen bu konu hakkında bize ticket atınız</value>
+  </data>
+  <data name="ConfirmCurrentEmailAddress" xml:space="preserve">
+    <value>Tekrar Şuanki Epostanız</value>
+  </data>
+  <data name="ConfirmCurrentPassword" xml:space="preserve">
+    <value>Tekrar Şuanki Şifreniz</value>
+  </data>
+  <data name="ConfirmNewEmailAddress" xml:space="preserve">
+    <value>Tekrar Yeni Epostanız</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Tekrar Yeni Şifreniz</value>
+  </data>
+  <data name="CurrentEmailAddress" xml:space="preserve">
+    <value>Şuanki Epostanız</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Şuanki Şifreniz</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email Adresi</value>
+  </data>
+  <data name="EmailChangeConfirmation" xml:space="preserve">
+    <value>Eposta Değişikliği Onaylama</value>
+  </data>
+  <data name="FailCurrentPassword" xml:space="preserve">
+    <value>Current Password must be a alphanumeric. a-z, A-Z, 0-9</value>
+  </data>
+  <data name="FailNewPassword" xml:space="preserve">
+    <value>New Password must be a alphanumeric. a-z, A-Z, 0-9</value>
+  </data>
+  <data name="FailPassword" xml:space="preserve">
+    <value>Password must be a alphanumeric. a-z, A-Z, 0-9</value>
+  </data>
+  <data name="FailSealPin" xml:space="preserve">
+    <value>Seal Pin must be a integer. 0-9 to 0-9</value>
+  </data>
+  <data name="FailSecretAnswer" xml:space="preserve">
+    <value>Secret Answer must be a-z, A-Z</value>
+  </data>
+  <data name="FailSecretQuestion" xml:space="preserve">
+    <value>Secret Question must be a-z, A-Z and space char</value>
+  </data>
+  <data name="FailUsername" xml:space="preserve">
+    <value>Username must be a alphanumeric. a-z, A-Z, 0-9</value>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>Anasayfa</value>
+  </data>
+  <data name="NewAccountInformation" xml:space="preserve">
+    <value>Tebrikler! Yeni hesap bilgileriniz ile Zofking'e giriş yapabilirsiniz.</value>
+  </data>
+  <data name="NewChangedAccountInformation" xml:space="preserve">
+    <value>Bilgileriniz değiştirildi, yeni hesap bilgileriniz aşağıdaki gibidir</value>
+  </data>
+  <data name="NewEmailAddress" xml:space="preserve">
+    <value>Yeni Epostanız</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Yeni Şifreniz</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Haberler</value>
+  </data>
+  <data name="NewsUpper" xml:space="preserve">
+    <value>HABERLER</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Telefon Numarasi</value>
+  </data>
+  <data name="RegistrationCompleted" xml:space="preserve">
+    <value>Kayıt Tamamlandı</value>
+  </data>
+  <data name="SealPin" xml:space="preserve">
+    <value>Eşya Kilit Şifresi</value>
+  </data>
+  <data name="SecretAnswer" xml:space="preserve">
+    <value>Güvenli Cevap</value>
+  </data>
+  <data name="SecretQuestion" xml:space="preserve">
+    <value>Güvenli Soru</value>
+  </data>
+  <data name="SiteEmail" xml:space="preserve">
+    <value>info@zofking.com</value>
+  </data>
+  <data name="SiteFacebookAddress" xml:space="preserve">
+    <value>https://www.facebook.com/ZofkingOfficial</value>
+  </data>
+  <data name="SiteGooglePlusAddress" xml:space="preserve">
+    <value>https://plus.google.com/115147850935063982163</value>
+  </data>
+  <data name="SiteTwitterAddress" xml:space="preserve">
+    <value>https://www.twitter.com/Zofkingcom</value>
+  </data>
+  <data name="SiteYoutubeAddress" xml:space="preserve">
+    <value>https://www.youtube.com/channel/UC4YudxMWPJOAaw_ik-FNSXg</value>
+  </data>
+  <data name="YourEmailChanged" xml:space="preserve">
+    <value>Epostanız Değiştirildi</value>
+  </data>
+  <data name="YourPasswordChanged" xml:space="preserve">
+    <value>Şifreniz Değiştirildi</value>
+  </data>
+  <data name="FailDoNotMatchEmail" xml:space="preserve">
+    <value>The new email and confirmation email do not match.</value>
+  </data>
+  <data name="FailDoNotMatchPassword" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="FailLenghtPassword" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="FailLenghtPhoneNumber" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long. Example: 905553332535</value>
+  </data>
+  <data name="FailLenghtSealPin" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="FailLenghtSecretAnswer" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="FailLenghtSecretQuestion" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="FailLenghtUsername" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="NationTransferUpper" xml:space="preserve">
+    <value>IRK TRANSFERİ</value>
+  </data>
+  <data name="AcceptNationTransfer" xml:space="preserve">
+    <value>Irk Transferini Onaylıyorum</value>
+  </data>
+  <data name="LastFreeGenderChange" xml:space="preserve">
+    <value>Son Bedava Cinsiyet Değişimi</value>
+  </data>
+  <data name="LastFreeNationTransfer" xml:space="preserve">
+    <value>Son Bedava Irk Transferi</value>
+  </data>
+  <data name="MyCharacters" xml:space="preserve">
+    <value>Karakterlerim</value>
+  </data>
+  <data name="CurrentNation" xml:space="preserve">
+    <value>Şuanki Irkınız</value>
+  </data>
+  <data name="FailGender" xml:space="preserve">
+    <value>Gender must be a-z, A-Z</value>
+  </data>
+  <data name="FailLenghtGender" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="GenderChangeUpper" xml:space="preserve">
+    <value>CİNSİYET DEĞİŞTİRME</value>
+  </data>
+  <data name="SelectList" xml:space="preserve">
+    <value>Lütfen Seçin</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Cinsiyet</value>
+  </data>
+  <data name="FailCharacter" xml:space="preserve">
+    <value>Character must be a-z, A-Z</value>
+  </data>
+  <data name="FailLenghtCharacter" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="NewChangedPasswordInformation" xml:space="preserve">
+    <value>Şifreniz değiştirildi, eğer bu işlemi siz yapmadıysanız lütfen desteğe başvurun!</value>
+  </data>
+  <data name="SiteDescription" xml:space="preserve">
+    <value>Free online Zombie MMOGame</value>
+  </data>
+  <data name="Announcements" xml:space="preserve">
+    <value>Duyurular</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Etkinlikler</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Devamını Oku</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Zaman</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Bizi Takip Edin</value>
+  </data>
+  <data name="LikeUs" xml:space="preserve">
+    <value>Bizi Begenin</value>
+  </data>
+  <data name="WatchUs" xml:space="preserve">
+    <value>Bizi Izleyin</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Sayfa</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="PageNotFound" xml:space="preserve">
+    <value>Sayfa Bulunamadi</value>
+  </data>
+  <data name="NewsDetail" xml:space="preserve">
+    <value>Haber Detayı</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Ürün</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Konu</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Etiket</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Etiketler</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tümü</value>
+  </data>
+  <data name="EventPrizes" xml:space="preserve">
+    <value>Etkinlik Ödülleri</value>
+  </data>
+  <data name="GoldPlusCafePrizes" xml:space="preserve">
+    <value>Gold Plus Cafe Ödülleri</value>
+  </data>
+  <data name="GoldPlusCafes" xml:space="preserve">
+    <value>Gold Plus Cafeler</value>
+  </data>
+  <data name="SortPrizes" xml:space="preserve">
+    <value>Sıralama Ödülleri</value>
+  </data>
+  <data name="StoreCampaigns" xml:space="preserve">
+    <value>Market Kampanyalari</value>
+  </data>
+  <data name="UpdateNotes" xml:space="preserve">
+    <value>Güncelleme Notlari</value>
+  </data>
+  <data name="Bonus" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
+  <data name="Campaign" xml:space="preserve">
+    <value>Kampanya</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Indirim</value>
+  </data>
+  <data name="ForNotice" xml:space="preserve">
+    <value>Bildirimi</value>
+  </data>
+  <data name="Game" xml:space="preserve">
+    <value>Oyun</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Ödeme</value>
+  </data>
+  <data name="PrivateMessage" xml:space="preserve">
+    <value>Özel Mesaj</value>
+  </data>
+  <data name="Prize" xml:space="preserve">
+    <value>Ödül</value>
+  </data>
+  <data name="Ticket" xml:space="preserve">
+    <value>Ticket</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Güncelleme</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Uyari</value>
+  </data>
+  <data name="Notices" xml:space="preserve">
+    <value>Bildirimler</value>
+  </data>
+  <data name="MyNotices" xml:space="preserve">
+    <value>Bildirimlerim</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Açiklama</value>
+  </data>
+  <data name="NoticeStartingDate" xml:space="preserve">
+    <value>Bildirim Tarihi</value>
+  </data>
+  <data name="StartingDate" xml:space="preserve">
+    <value>Başlangiç Tarihi</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Destek</value>
+  </data>
+  <data name="CharDetail" xml:space="preserve">
+    <value>Karakter Detayı</value>
+  </data>
+  <data name="SendNewTicket" xml:space="preserve">
+    <value>Yeni Ticket Gönder</value>
+  </data>
+  <data name="SupportSystem" xml:space="preserve">
+    <value>Destek Sistemi (Ticket)</value>
+  </data>
+  <data name="TicketDetail" xml:space="preserve">
+    <value>Ticket Detayı</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="YourMessage" xml:space="preserve">
+    <value>Mesajınız</value>
+  </data>
+  <data name="WriteNewAnswer" xml:space="preserve">
+    <value>Yeni Cevap Yaz</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Yönetici</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Kullanıcı</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>Oyna</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detay</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>Kullanıcı Bulunamadı</value>
+  </data>
+  <data name="Alive" xml:space="preserve">
+    <value>Hayatta</value>
+  </data>
+  <data name="Dead" xml:space="preserve">
+    <value>Ölü</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="Clan" xml:space="preserve">
+    <value>Klan Detayı</value>
+  </data>
+  <data name="ClanNotFound" xml:space="preserve">
+    <value>Klan Bulunamadi</value>
+  </data>
+  <data name="PaymentMethods" xml:space="preserve">
+    <value>Ödeme Yöntemleri</value>
+  </data>
+  <data name="SalesPartners" xml:space="preserve">
+    <value>Satış Ortaklarımız</value>
+  </data>
+  <data name="PromotionalProducts" xml:space="preserve">
+    <value>Tanitim Ürünleri</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Ürünler</value>
+  </data>
+  <data name="Ranking" xml:space="preserve">
+    <value>Siralama</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Paylas</value>
+  </data>
+  <data name="CreatedDate" xml:space="preserve">
+    <value>Olusturma Tarihi</value>
+  </data>
+  <data name="LastUpdatedDate" xml:space="preserve">
+    <value>Son Cevap Tarihi</value>
+  </data>
+  <data name="Starter" xml:space="preserve">
+    <value>Baslatan</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="AdminAnswer" xml:space="preserve">
+    <value>Yönetici Cevabı</value>
+  </data>
+  <data name="Archived" xml:space="preserve">
+    <value>Arşivlenmiş</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Kapanmış</value>
+  </data>
+  <data name="ListStatus" xml:space="preserve">
+    <value>Şu Durumdakiler</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="UserAnswer" xml:space="preserve">
+    <value>Kullanıcı Cevabı</value>
+  </data>
+  <data name="TicketClose" xml:space="preserve">
+    <value>Ticket'i Kapat</value>
+  </data>
+  <data name="TicketOpen" xml:space="preserve">
+    <value>Ticket'i Tekrar Aç</value>
+  </data>
+  <data name="TicketArchive" xml:space="preserve">
+    <value>Ticket'i Arsivle</value>
+  </data>
+  <data name="MyNoticesText" xml:space="preserve">
+    <value>Hesabiniza gelen tüm geçmiş bildirimlerinizi görebilirsiniz</value>
+  </data>
+  <data name="ChangeCharAppearance" xml:space="preserve">
+    <value>Karakter Görünümü Degistir</value>
+  </data>
+  <data name="ChangeCharAppearanceDetail" xml:space="preserve">
+    <value>Lütfen görünümünü değiştirmek istediğiniz karakterin üzerine tıklayın.</value>
+  </data>
+  <data name="CharName" xml:space="preserve">
+    <value>Karakter Adi</value>
+  </data>
+  <data name="Health" xml:space="preserve">
+    <value>Can</value>
+  </data>
+  <data name="InClan" xml:space="preserve">
+    <value>Bulundugu Klan</value>
+  </data>
+  <data name="LifeSituation" xml:space="preserve">
+    <value>Yasam Durumu</value>
+  </data>
+  <data name="Experience" xml:space="preserve">
+    <value>Deneyim</value>
+  </data>
+  <data name="SurvivalTime" xml:space="preserve">
+    <value>Hayatta Kalma Süresi</value>
+  </data>
+  <data name="TotalKilledRival" xml:space="preserve">
+    <value>Toplam Öldürülen Rakip</value>
+  </data>
+  <data name="TotalKilledZombie" xml:space="preserve">
+    <value>Toplam Öldürülen Zombi</value>
+  </data>
+  <data name="Reputation" xml:space="preserve">
+    <value>Nam</value>
+  </data>
+  <data name="FoodAmount" xml:space="preserve">
+    <value>Yemek Miktari</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>saat</value>
+  </data>
+  <data name="LastMap" xml:space="preserve">
+    <value>Bulundugu Son Harita</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>dakika</value>
+  </data>
+  <data name="ToxicAmount" xml:space="preserve">
+    <value>Kandaki Zehir miktari</value>
+  </data>
+  <data name="WaterAmount" xml:space="preserve">
+    <value>Su miktari</value>
+  </data>
+  <data name="AppearanceDetailText" xml:space="preserve">
+    <value>Lütfen karakterinize uygulamak istediginiz yeni görünümünü seçiniz. </value>
+  </data>
+  <data name="UpdateAccountInformation" xml:space="preserve">
+    <value>Hesap Bilgilerini Güncelle</value>
+  </data>
+  <data name="UpdateMyAccountInformation" xml:space="preserve">
+    <value>Hesap Bilgilerimi Güncelle</value>
+  </data>
+  <data name="MyAccountInformationText" xml:space="preserve">
+    <value>Güvenliğiniz için lütfen en güncel ve doğru bilgilerinizi kullanınız.</value>
+  </data>
+  <data name="UpdateIt" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="NotEntered" xml:space="preserve">
+    <value>Girilmemiş</value>
+  </data>
+  <data name="SecretQuestionAndAnswer" xml:space="preserve">
+    <value>Güvenli Soru ve Cevap</value>
+  </data>
+  <data name="ChangeEmailMenu" xml:space="preserve">
+    <value>Email Adresi Degistir</value>
+  </data>
+  <data name="SecretAnswerMenu" xml:space="preserve">
+    <value>Guvenli Cevap</value>
+  </data>
+  <data name="SendConfirmationMail" xml:space="preserve">
+    <value>Onay Maili Gönder</value>
+  </data>
+  <data name="ChangePasswordMenu" xml:space="preserve">
+    <value>Sifre Degistir</value>
+  </data>
+</root>

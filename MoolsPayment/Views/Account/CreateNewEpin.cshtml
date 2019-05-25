@@ -1,0 +1,75 @@
+﻿@using Resources
+@model MoolsPayment.Models.MoolsEpin
+
+@{
+    ViewBag.Title = "CreateNewEpin";
+
+    List<SelectListItem> gameProductList = new List<SelectListItem>();
+
+    foreach (var c in ViewBag.gameProductList)
+    {
+        gameProductList.Add(new SelectListItem
+        {
+            Text = @c.Cost + " " + @c.PaymentCurrency.Name + " - " + @c.Accounts.Name + " " + @c.Name,
+            Value = @c.MoolsEpinGameProductID.ToString()
+        });
+    }
+
+
+
+}
+
+<h2>CreateNewEpin</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <font color="red">
+                @Html.Raw(ViewBag.ErrorMessage)
+            </font>
+            <br /><br />
+        }
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Quantity">@Home.Quantity</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line input-small" id="Quantity" name="Quantity" value="" type="text">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Quantity" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="isBonus">@Home.Bonus?</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line input-small" id="isBonus" name="isBonus" value="" type="text">
+                <span class="field-validation-valid text-danger" data-valmsg-for="isBonus" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="GameProductID">@Home.Product</label>
+
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.GameProductID, gameProductList, @Home.SelectList, new { @class = "form-control select2me" })
+                @Html.ValidationMessageFor(model => model.GameProductID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

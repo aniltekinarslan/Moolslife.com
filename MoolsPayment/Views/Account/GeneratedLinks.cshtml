@@ -1,0 +1,179 @@
+﻿@using Resources
+@model IEnumerable<MoolsPayment.Models.Links>
+
+@{
+    ViewBag.Title = Home.GeneratedLinks;
+}
+
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index","Home")">Panel</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("GeneratedLinks", "Account")">@Home.GeneratedLinks</a>
+        </li>
+    </ul>
+</div>
+<h3 class="page-title"></h3>
+<!-- END PAGE HEADER-->
+
+
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-comments"></i>@Home.GeneratedLinks
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="reload" data-original-title="" title="">
+            </a>
+            <a href="javascript:;" class="remove" data-original-title="" title="">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-scrollable">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            #Token
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.customer_Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Amount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Currency)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrderID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.product_Code)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.product_Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.customer_Identity)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.customer_NameSurname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.customer_PhoneCountryCode)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.customer_Phone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.customer_Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GeneratedDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IpAddress)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IsDead)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var n in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @n.Token
+                                </td>
+                                <td>
+                                    @n.customer_Email
+                                </td>
+                                <td>
+                                    @n.Date
+                                </td>
+                                <td>
+                                    @if (n.Amount == 0)
+                                    {
+                                        @Html.Raw("-")
+                                    }
+                                    else
+                                    {
+                                        @Html.Raw(n.Amount)
+                                    }
+                                </td>
+                                <td>
+                                    @n.PaymentCurrency.Name
+                                </td>
+                                <td>
+                                    @n.OrderID
+                                </td>
+                                <td>
+                                    @n.product_Code
+                                </td>
+                                <td>
+                                    @n.product_Name
+                                </td>
+                                <td>
+                                    @n.customer_Identity
+                                </td>
+                                <td>
+                                    @n.customer_NameSurname
+                                </td>
+                                <td>
+                                    @n.customer_PhoneCountryCode
+                                </td>
+                                <td>
+                                    @n.customer_Phone
+                                </td>
+                                <td>
+                                    @n.customer_Email
+                                </td>
+                                <td>
+                                    @n.GeneratedDate
+                                </td>
+                                <td>
+                                    @n.IpAddress
+                                </td>
+                                <td>
+                                    @if (n.IsDead == false)
+                                    {
+                                        <span class="label label-sm label-success">
+                                            @Home.No
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-danger">
+                                            @Home.Yes
+                                        </span>
+                                    }
+
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- END DASHBOARD STATS -->
+<div class="clearfix"></div>
+

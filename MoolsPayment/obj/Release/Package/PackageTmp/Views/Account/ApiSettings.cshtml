@@ -1,0 +1,88 @@
+﻿@using Resources
+@model MoolsPayment.Models.Accounts
+
+@{
+    ViewBag.Title = Home.ApiSettings;
+}
+
+<h2>@Home.ApiSettings</h2>
+
+
+<div>
+    
+
+    <hr/>
+    @if (Model != null)
+    {
+        <dl class="">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountID)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AccountID)
+            </dd>
+
+            <br/>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerCode)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DealerCode)
+            </dd>
+
+            <br/>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NotifyUrl)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NotifyUrl)
+            </dd>
+
+            <br/>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LogoImageUrl_) <br/>(Max 250x75 px)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LogoImageUrl_)
+            </dd>
+
+            <br/>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PaymentCancelRedirectUrl_)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PaymentCancelRedirectUrl_)
+            </dd>
+
+            <br />
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ReturnUrlSuccess)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReturnUrlSuccess)
+            </dd>
+
+            <br />
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ReturnUrlFailed)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReturnUrlFailed)
+            </dd>
+
+        </dl>
+    }
+    <br/>
+    <a href ="/EditApiSettings">
+        <input type="button" class="mavi-btn" value="@Home.EditApiSettings"/>
+    </a>
+
+</div>
+

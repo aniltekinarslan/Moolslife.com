@@ -1,0 +1,226 @@
+﻿@using Resources
+@model MoolsPayment.Models.Payments
+
+@{
+    ViewBag.Title = Home.PaymentQuery;
+}
+
+<h2>@Home.PaymentQuery</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @if (Model != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.PaymentID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PaymentID)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Amount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Commission)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Commission)
+            </dd>
+
+            <dt>
+                Currency
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.PaymentCurrency.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @if (Model.Status == 1)
+                {
+                    <span class="label label-sm label-success">
+                        @Home.Approved
+                    </span>
+                }
+                else if (Model.Status == -1)
+                {
+                    <span class="label label-sm label-danger">
+                        @Home.Rejected
+                    </span>
+                }
+                else if (Model.Status == -2)
+                {
+                    <span class="label label-sm label-danger">
+                        @Home.Refunded
+                    </span>
+                }
+                else
+                {
+                    <span class="label label-sm label-info">
+                        @Home.Waiting
+                    </span>
+                }
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProcessDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProcessDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Message)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Message)
+            </dd>
+
+            <dt>
+               Bank @Html.DisplayNameFor(model => model.Methods.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Methods.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PaymentType.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ApiCode)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ApiCode)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Links1.OrderID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.OrderID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Links1.product_Code)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.product_Code)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Links1.product_Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.product_Name)
+            </dd>
+
+            <dt>
+                Link @Html.DisplayNameFor(model => model.Links1.Token)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.Token)
+            </dd>
+
+
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Links1.customer_Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.customer_Email)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Links1.customer_Identity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.customer_Identity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Links1.customer_Phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.customer_Phone)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Links1.customer_NameSurname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.customer_NameSurname)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Links1.IpAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Links1.IpAddress)
+            </dd>
+        }
+        else
+        {
+            <dt>
+                Payment not found. 
+            </dt>
+            <dd>
+                Please try again search with another ApiCode, PaymentID or Token
+            </dd>
+        }
+    </dl>
+</div>
+<p>
+
+
+</p>
